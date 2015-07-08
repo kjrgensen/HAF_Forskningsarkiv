@@ -10,3 +10,6 @@ c:\users\steffen andersen\documents\visual studio 2013\Projects\ForskningsArkiv\
 C:\Users\Steffen Andersen\Source\Repos\HAF_Forskningsarkiv2\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe.config
 C:\Users\Steffen Andersen\Source\Repos\HAF_Forskningsarkiv2\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
 C:\Users\Steffen Andersen\Source\Repos\HAF_Forskningsarkiv2\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
+C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe.config
+C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
+C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
