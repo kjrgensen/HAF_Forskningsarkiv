@@ -7,3 +7,6 @@ c:\users\steffen andersen\documents\visual studio 2013\Projects\ForskningsArkiv\
 c:\users\steffen andersen\documents\visual studio 2013\Projects\ForskningsArkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
 c:\users\steffen andersen\documents\visual studio 2013\Projects\ForskningsArkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
 c:\users\steffen andersen\documents\visual studio 2013\Projects\ForskningsArkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.SearchForm.resources
+C:\Users\Steffen Andersen\Source\Repos\HAF_Forskningsarkiv2\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe.config
+C:\Users\Steffen Andersen\Source\Repos\HAF_Forskningsarkiv2\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
+C:\Users\Steffen Andersen\Source\Repos\HAF_Forskningsarkiv2\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
