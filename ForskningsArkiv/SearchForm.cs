@@ -15,6 +15,9 @@ namespace ForskningsArkiv
     public partial class SearchForm : Form
     {
         private DB d;
+        public ListBox _listBox; 
+       
+        
         
         public SearchForm()
         {
@@ -34,47 +37,42 @@ namespace ForskningsArkiv
         public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-         //d=new DB();
-         //   d.connection();
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+           
+            d = new DB();
+            d.connection(this);
 
-            //d = new DB();
-            //d.connection();
-            //listBox1.Items.Add(d);
+            //SqlConnection constring = new SqlConnection(
+            //   "Data Source=HERPRIT\\SQLEXPRESS;Initial Catalog=Forskningsarkiv(Sagnlandet);Persist Security Info=True;User ID=sa;Password=titan");
+            //constring.Open();
 
-            SqlConnection constring = new SqlConnection(
-               "Data Source=HERPRIT\\SQLEXPRESS;Initial Catalog=Forskningsarkiv(Sagnlandet);Persist Security Info=True;User ID=sa;Password=titan");
-            constring.Open();
+            //MessageBox.Show("connected");
 
-            MessageBox.Show("connected");
+            //SqlDataAdapter da = new SqlDataAdapter("SELECT * From tblEmnetyper" , constring);
 
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * From tblEmnetyper", constring);
+            //DataTable emnetyperDT = new DataTable();
+            //da.Fill(emnetyperDT);
+            
+            ////Datagrid
+            //dataGridView1.DataSource = emnetyperDT;
+  
+            ////viser emnetype og beskrivelse i listbox
+            //foreach (DataRow row in emnetyperDT.Rows)
+            //{
+            //    ListBox1.Items.Add("EmneTyper: " + row["emnetype"].ToString());
+            //    ListBox1.Items.Add("Beskrivelse: " + row["beskrivelse"].ToString());
+            //    //AutoItem.Add(row["beskrivelse"].ToString());
 
-            DataTable emnetyperDT = new DataTable();
-            da.Fill(emnetyperDT);
-
-
-            //viser emnetype og beskrivelse i listbox
-            foreach (DataRow row in emnetyperDT.Rows)
-            {
-                listBox1.Items.Add("EmneTyper: "+ row["emnetype"].ToString());
-                listBox1.Items.Add("Beskrivelse: "+ row["beskrivelse"].ToString());
-            }
-
-
-
-
-            //listBox1.DataSource = emnetyper;
-            //listBox1.DisplayMember = "emnetype";
-            //listBox1.DisplayMember = "beskrivelse";
-            //listBox1.ValueMember = "emneID";
-
+            //}
 
         }
+
+    
+
     }
+
+ 
 }
