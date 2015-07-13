@@ -14,8 +14,8 @@ namespace ForskningsArkiv
 {
     public partial class SearchForm : Form
     {
-        private DB d;
-        public ListBox _listBox; 
+        private DB _db;
+     
        
         
         
@@ -42,35 +42,19 @@ namespace ForskningsArkiv
         private void button2_Click(object sender, EventArgs e)
         {
            
-            d = new DB();
-            d.connection(this);
-
-            //SqlConnection constring = new SqlConnection(
-            //   "Data Source=HERPRIT\\SQLEXPRESS;Initial Catalog=Forskningsarkiv(Sagnlandet);Persist Security Info=True;User ID=sa;Password=titan");
-            //constring.Open();
-
-            //MessageBox.Show("connected");
-
-            //SqlDataAdapter da = new SqlDataAdapter("SELECT * From tblEmnetyper" , constring);
-
-            //DataTable emnetyperDT = new DataTable();
-            //da.Fill(emnetyperDT);
-            
-            ////Datagrid
-            //dataGridView1.DataSource = emnetyperDT;
-  
-            ////viser emnetype og beskrivelse i listbox
-            //foreach (DataRow row in emnetyperDT.Rows)
-            //{
-            //    ListBox1.Items.Add("EmneTyper: " + row["emnetype"].ToString());
-            //    ListBox1.Items.Add("Beskrivelse: " + row["beskrivelse"].ToString());
-            //    //AutoItem.Add(row["beskrivelse"].ToString());
-
-            //}
+           _db = new DB();
+           _db.connection(this);
 
         }
 
-    
+        private void button3_Click(object sender, EventArgs e)
+        {
+            _db = new DB();
+            _db.SøgiTabel(this);
+        }
+
+   
+
 
     }
 

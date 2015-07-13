@@ -32,6 +32,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1Søg = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,11 +75,39 @@
             this.dataGridView1.Size = new System.Drawing.Size(288, 150);
             this.dataGridView1.TabIndex = 6;
             // 
+            // textBox1Søg
+            // 
+            this.textBox1Søg.Location = new System.Drawing.Point(28, 240);
+            this.textBox1Søg.Name = "textBox1Søg";
+            this.textBox1Søg.Size = new System.Drawing.Size(100, 20);
+            this.textBox1Søg.TabIndex = 7;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(162, 240);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Søg";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(253, 240);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(163, 95);
+            this.listBox2.TabIndex = 9;
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 354);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox1Søg);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -85,6 +116,7 @@
             this.Text = "SearchForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -94,5 +126,8 @@
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.ListBox ListBox1;
         internal System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.TextBox textBox1Søg;
+        public System.Windows.Forms.ListBox listBox2;
+        public System.Windows.Forms.Button button3;
     }
 }

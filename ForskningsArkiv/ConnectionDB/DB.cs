@@ -24,40 +24,57 @@ namespace ForskningsArkiv.ConnectionDB
 
         public void connection(SearchForm seachform)
         {
+           
             SqlConnection constring = new SqlConnection(
                    "Data Source=HERPRIT\\SQLEXPRESS;Initial Catalog=Forskningsarkiv(Sagnlandet);Persist Security Info=True;User ID=sa;Password=titan");
             constring.Open();
 
             MessageBox.Show("connected");
-
+            
             SqlDataAdapter da = new SqlDataAdapter("SELECT * From tblEmnetyper", constring);
 
             DataTable emnetyperDT = new DataTable();
             da.Fill(emnetyperDT);
 
-            SearchForm sf = new SearchForm();
-
-            seachform.dataGridView1.DataSource = emnetyperDT;
-           
-
-            
+ 
             //viser emnetype og beskrivelse i listbox
             foreach (DataRow row in emnetyperDT.Rows)
             {
              
-               seachform.ListBox1.Items.Add("EmneTyper: " + row["emnetype"].ToString());
+              seachform.ListBox1.Items.Add("EmneTyper: " + row["emnetype"].ToString());
               seachform.ListBox1.Items.Add("Beskrivelse: " + row["beskrivelse"].ToString());
 
             }
          
             seachform.ListBox1.Update();
-        
 
            
         }
 
-      
 
+
+        public void SøgiTabel(SearchForm seachform)
+        {
+            SqlConnection constring = new SqlConnection(
+                  "Data Source=HERPRIT\\SQLEXPRESS;Initial Catalog=Forskningsarkiv(Sagnlandet);Persist Security Info=True;User ID=sa;Password=titan");
+
+            constring.Open();
+            //MessageBox.Show("connected");
+
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * from tblEmnetyper where emnetype like '"+ seachform.textBox1Søg.Text+"%'", constring);
+
+            DataTable emnetyperDT = new DataTable();
+            da.Fill(emnetyperDT);
+
+            seachform.dataGridView1.DataSource = emnetyperDT;
+
+            foreach (DataRow row in emnetyperDT.Rows)
+            {
+                seachform.listBox2.Items.Add("EmneTyper: " + row["emnetype"].ToString());
+            }
+
+
+        }
      
 
 
