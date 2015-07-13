@@ -15,10 +15,7 @@ namespace ForskningsArkiv
     public partial class SearchForm : Form
     {
         private DB _db;
-     
-       
-        
-        
+
         public SearchForm()
         {
             InitializeComponent();
