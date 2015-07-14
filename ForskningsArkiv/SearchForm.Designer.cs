@@ -35,6 +35,7 @@
             this.textBox1Søg = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +102,21 @@
             this.listBox2.Size = new System.Drawing.Size(288, 186);
             this.listBox2.TabIndex = 9;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Emnetyper";
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 462);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1Søg);
@@ -130,5 +141,6 @@
         public System.Windows.Forms.TextBox textBox1Søg;
         public System.Windows.Forms.ListBox listBox2;
         public System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label1;
     }
 }

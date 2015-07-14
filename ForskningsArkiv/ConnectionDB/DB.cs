@@ -12,11 +12,11 @@ namespace ForskningsArkiv.ConnectionDB
         //public SearchForm sf;
         //private ListBox ListBox1;
 
+        public string DbConnectionString = "Data Source=HERPRIT\\SQLEXPRESS;Initial Catalog=Forskningsarkiv(Sagnlandet);Persist Security Info=True;User ID=sa;Password=titan";
 
         public void connection(SearchForm seachform)
         {
-            var constring = new SqlConnection(
-                "Data Source=HERPRIT\\SQLEXPRESS;Initial Catalog=Forskningsarkiv(Sagnlandet);Persist Security Info=True;User ID=sa;Password=titan");
+            var constring = new SqlConnection(DbConnectionString);
             constring.Open();
 
             MessageBox.Show("connected");
@@ -40,8 +40,7 @@ namespace ForskningsArkiv.ConnectionDB
 
         public void SøgiTabel(SearchForm seachform)
         {
-            var constring = new SqlConnection(
-                "Data Source=HERPRIT\\SQLEXPRESS;Initial Catalog=Forskningsarkiv(Sagnlandet);Persist Security Info=True;User ID=sa;Password=titan");
+            var constring = new SqlConnection(DbConnectionString);
 
             constring.Open();
 
@@ -59,7 +58,7 @@ namespace ForskningsArkiv.ConnectionDB
             //tilføjer til list2
             foreach (DataRow row in emnetyperDT.Rows)
             {
-                seachform.listBox2.Items.Add("EmneTyper: " + row["emnetype"]);
+                seachform.listBox2.Items.Add("EmneTyper: " + row["emnetype"] +" : "+ row["beskrivelse"]);
             }
         }
     }
