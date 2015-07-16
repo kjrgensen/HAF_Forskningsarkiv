@@ -19,4 +19,3 @@ C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\Forskning
 C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csproj.GenerateResource.Cache
 C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
 C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
-C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csprojResolveAssemblyReference.cache

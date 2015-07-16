@@ -16,25 +16,25 @@ namespace ForskningsArkiv.ConnectionDB
 
         public void connection(SearchForm seachform)
         {
-            var constring = new SqlConnection(DbConnectionString);
-            constring.Open();
+        //    var constring = new SqlConnection(DbConnectionString);
+        //    constring.Open();
 
-            MessageBox.Show("connected");
+        //    MessageBox.Show("connected");
 
-            var da = new SqlDataAdapter("SELECT * From tblEmnetyper", constring);
+        //    var da = new SqlDataAdapter("SELECT * From tblEmnetyper", constring);
 
-            var emnetyperDT = new DataTable();
-            da.Fill(emnetyperDT);
+        //    var emnetyperDT = new DataTable();
+        //    da.Fill(emnetyperDT);
 
 
-            //viser emnetype og beskrivelse i listbox
-            foreach (DataRow row in emnetyperDT.Rows)
-            {
-                seachform.ListBox1.Items.Add("EmneTyper: " + row["emnetype"]);
-                seachform.ListBox1.Items.Add("Beskrivelse: " + row["beskrivelse"]);
-            }
+        //    //viser emnetype og beskrivelse i listbox
+        //    foreach (DataRow row in emnetyperDT.Rows)
+        //    {
+        //        seachform.ListBox1.Items.Add("EmneTyper: " + row["emnetype"]);
+        //        seachform.ListBox1.Items.Add("Beskrivelse: " + row["beskrivelse"]);
+        //    }
 
-            seachform.ListBox1.Update();
+        //    seachform.ListBox1.Update();
         }
 
 
