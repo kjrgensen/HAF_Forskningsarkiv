@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -12,7 +13,7 @@ namespace ForskningsArkiv.ConnectionDB
         //public SearchForm sf;
         //private ListBox ListBox1;
 
-        public string DbConnectionString = "Data Source=HERPRIT\\SQLEXPRESS;Initial Catalog=Forskningsarkiv(Sagnlandet);Persist Security Info=True;User ID=sa;Password=titan";
+        public string DbConnectionString = "Data Source=DESKTOP-FOS4ILV\\SQLEXPRESS;Initial Catalog=DBHAF;Integrated Security=True";
 
         public void connection(SearchForm seachform)
         {
@@ -37,7 +38,7 @@ namespace ForskningsArkiv.ConnectionDB
         //    seachform.ListBox1.Update();
         }
 
-
+        //
         public void SøgiTabel(SearchForm seachform)
         {
             var constring = new SqlConnection(DbConnectionString);
@@ -48,18 +49,24 @@ namespace ForskningsArkiv.ConnectionDB
 
             var sqlDataAdapter =
                 new SqlDataAdapter(
-                    "SELECT * from tblEmnetyper where emnetype like '%" + seachform.textBox1Søg.Text + "%'", constring);
+                    "SELECT * from tblkontaktpersoner where fornavn like '%" + seachform.textBox1Søg.Text + "%'", constring);
 
-            var emnetyperDT = new DataTable();
-            sqlDataAdapter.Fill(emnetyperDT);
+            var emnetyperDt = new DataTable();
+            sqlDataAdapter.Fill(emnetyperDt);
 
-            seachform.dataGridView1.DataSource = emnetyperDT;
+            seachform.dataGridView1.DataSource = emnetyperDt;
+           
 
-            //tilføjer til list2
-            foreach (DataRow row in emnetyperDT.Rows)
-            {
-                seachform.listBox2.Items.Add("EmneTyper: " + row["emnetype"] +" : "+ row["beskrivelse"]);
-            }
+             //tilføjer til list2
+            //foreach (DataRow row in emnetyperDT.Rows)
+            //{
+
+            //    seachform.listBox2.Items.Add("EmneTyper: " + row["emnetype"] +" : "+ row["beskrivelse"]);
+            //}
         }
+
+
+     
+    
     }
 }
