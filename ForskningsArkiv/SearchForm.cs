@@ -33,63 +33,27 @@ namespace ForskningsArkiv
 
         public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            _db = new DB();
-            _db.connection(this);
+           
+           _db = new DB();
+           _db.connection(this);
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //this.dataGridView1.DataError += dataGridView1_DataError;
-            //dataGridView1
-
             _db = new DB();
             _db.SøgiTabel(this);
-
         }
 
-        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs anError)
-        {
-         
-            MessageBox.Show("Error happened " + anError.Context.ToString());
-
-            //if (anError.Context == DataGridViewDataErrorContexts.Commit)
-            //{
-            //    MessageBox.Show("Commit error");
-            //}
-            //if (anError.Context == DataGridViewDataErrorContexts.CurrentCellChange)
-            //{
-            //    MessageBox.Show("Cell change");
-            //}
-            //if (anError.Context == DataGridViewDataErrorContexts.Parsing)
-            //{
-            //    MessageBox.Show("parsing error");
-            //}
-            //if (anError.Context == DataGridViewDataErrorContexts.LeaveControl)
-            //{
-            //    MessageBox.Show("leave control error");
-            //}
-
-            //if ((anError.Exception) is ConstraintException)
-            //{
-            //    DataGridView view = (DataGridView) sender;
-            //    view.Rows[anError.RowIndex].ErrorText = "an error";
-            //    view.Rows[anError.RowIndex].Cells[anError.ColumnIndex].ErrorText = "an error";
-
-            //    anError.ThrowException = false;
-
-
-            }
-
-
-        }
+   
 
 
     }
 
+ 
+}
