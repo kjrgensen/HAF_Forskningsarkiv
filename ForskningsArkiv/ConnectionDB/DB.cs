@@ -13,29 +13,30 @@ namespace ForskningsArkiv.ConnectionDB
         //public SearchForm sf;
         //private ListBox ListBox1;
 
-        public string DbConnectionString = "Data Source=DESKTOP-FOS4ILV\\SQLEXPRESS;Initial Catalog=DBHAF;Integrated Security=True";
+        public string DbConnectionString =
+            "Data Source=DESKTOP-8MJDH1B\\SQLEXPRESS;Initial Catalog=Sagnlandet;Integrated Security=True";
 
         public void connection(SearchForm seachform)
         {
-        //    var constring = new SqlConnection(DbConnectionString);
-        //    constring.Open();
+            //    var constring = new SqlConnection(DbConnectionString);
+            //    constring.Open();
 
-        //    MessageBox.Show("connected");
+            //    MessageBox.Show("connected");
 
-        //    var da = new SqlDataAdapter("SELECT * From tblEmnetyper", constring);
+            //    var da = new SqlDataAdapter("SELECT * From tblEmnetyper", constring);
 
-        //    var emnetyperDT = new DataTable();
-        //    da.Fill(emnetyperDT);
+            //    var emnetyperDT = new DataTable();
+            //    da.Fill(emnetyperDT);
 
 
-        //    //viser emnetype og beskrivelse i listbox
-        //    foreach (DataRow row in emnetyperDT.Rows)
-        //    {
-        //        seachform.ListBox1.Items.Add("EmneTyper: " + row["emnetype"]);
-        //        seachform.ListBox1.Items.Add("Beskrivelse: " + row["beskrivelse"]);
-        //    }
+            //    //viser emnetype og beskrivelse i listbox
+            //    foreach (DataRow row in emnetyperDT.Rows)
+            //    {
+            //        seachform.ListBox1.Items.Add("EmneTyper: " + row["emnetype"]);
+            //        seachform.ListBox1.Items.Add("Beskrivelse: " + row["beskrivelse"]);
+            //    }
 
-        //    seachform.ListBox1.Update();
+            //    seachform.ListBox1.Update();
         }
 
         //
@@ -45,28 +46,38 @@ namespace ForskningsArkiv.ConnectionDB
 
             constring.Open();
 
-            seachform.listBox2.Items.Clear();
+            //seachform.listBox1.Items.Clear();
+            
 
             var sqlDataAdapter =
                 new SqlDataAdapter(
-                    "SELECT * from tblkontaktpersoner where fornavn like '%" + seachform.textBox1Søg.Text + "%'", constring);
+                    "SELECT * from tblSagsoplysninger where journalNr like '%" + seachform.textBox1Søg.Text + "%'",
+                    constring);
 
             var emnetyperDt = new DataTable();
             sqlDataAdapter.Fill(emnetyperDt);
-
             seachform.dataGridView1.DataSource = emnetyperDt;
-           
 
-             //tilføjer til list2
-            //foreach (DataRow row in emnetyperDT.Rows)
+
+
+
+            //var dataset = new DataSet();
+            //sqlDataAdapter.Fill(dataset);
+            //seachform.dataGridView1.DataSource = dataset.Tables[0];
+
+            //tilføjer til list2
+            //foreach (DataRow row in emnetyperDt.Rows)
             //{
-
-            //    seachform.listBox2.Items.Add("EmneTyper: " + row["emnetype"] +" : "+ row["beskrivelse"]);
+            //    foreach (var item in row.ItemArray)
+            //    {
+            //        seachform.listBox1.Items.Add(item);
+            //    }
+            //    //seachform.listBox1.Items.Add("KontaktPersoner: " + row["fornavn"] + " : " + row["efternavn"]);
             //}
         }
 
 
-     
-    
+
+
     }
-}
+    }
