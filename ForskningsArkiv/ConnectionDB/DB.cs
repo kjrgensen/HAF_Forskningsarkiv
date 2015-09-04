@@ -14,32 +14,8 @@ namespace ForskningsArkiv.ConnectionDB
         //private ListBox ListBox1;
 
         public string DbConnectionString =
-            "Data Source=DESKTOP-8MJDH1B\\SQLEXPRESS;Initial Catalog=Sagnlandet;Integrated Security=True";
-
-        public void connection(SearchForm seachform)
-        {
-            //    var constring = new SqlConnection(DbConnectionString);
-            //    constring.Open();
-
-            //    MessageBox.Show("connected");
-
-            //    var da = new SqlDataAdapter("SELECT * From tblEmnetyper", constring);
-
-            //    var emnetyperDT = new DataTable();
-            //    da.Fill(emnetyperDT);
-
-
-            //    //viser emnetype og beskrivelse i listbox
-            //    foreach (DataRow row in emnetyperDT.Rows)
-            //    {
-            //        seachform.ListBox1.Items.Add("EmneTyper: " + row["emnetype"]);
-            //        seachform.ListBox1.Items.Add("Beskrivelse: " + row["beskrivelse"]);
-            //    }
-
-            //    seachform.ListBox1.Update();
-        }
-
-        //
+            "Data Source=DESKTOP-FOS4ILV\\SQLEXPRESS;Initial Catalog=DBHAF;Integrated Security=True";
+        
         public void SøgiTabel(SearchForm seachform)
         {
             var constring = new SqlConnection(DbConnectionString);
@@ -58,9 +34,6 @@ namespace ForskningsArkiv.ConnectionDB
             sqlDataAdapter.Fill(emnetyperDt);
             seachform.dataGridView1.DataSource = emnetyperDt;
 
-
-
-
             //var dataset = new DataSet();
             //sqlDataAdapter.Fill(dataset);
             //seachform.dataGridView1.DataSource = dataset.Tables[0];
@@ -77,7 +50,8 @@ namespace ForskningsArkiv.ConnectionDB
         }
 
 
+        //select tblEmnetyper.emnetype,tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper
 
 
     }
-    }
+}

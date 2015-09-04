@@ -20,8 +20,7 @@ namespace ForskningsArkiv
         {
             InitializeComponent();
             //DB d = new DB();
-            //d.connection();
-
+           //d.connection();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,14 +33,6 @@ namespace ForskningsArkiv
         public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-           
-           _db = new DB();
-           _db.connection(this);
-
         }
 
         private void button3_Click(object sender, EventArgs e)
