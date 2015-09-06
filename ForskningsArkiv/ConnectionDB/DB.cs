@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -15,43 +14,91 @@ namespace ForskningsArkiv.ConnectionDB
 
         public string DbConnectionString =
             "Data Source=DESKTOP-FOS4ILV\\SQLEXPRESS;Initial Catalog=DBHAF;Integrated Security=True";
-        
-        public void SøgiTabel(SearchForm seachform)
+
+     
+
+
+        //select tblEmnetyper.emnetype,tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper
+        public void EmnetyperSøgFritekst(SearchForm searchForm)
+        {
+
+            var constring = new SqlConnection(DbConnectionString);
+
+            constring.Open();
+
+           
+                var sqlDataAdapter =
+              new SqlDataAdapter(
+                  "Select tblSagsoplysninger.sagens_titel,tblEmnetyper.emnetype,tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper where sagens_titel " + " like '%" +
+                  searchForm.textBox1Søg.Text + "%'",
+                  constring);
+
+                var datatable = new DataTable();
+                sqlDataAdapter.Fill(datatable);
+                searchForm.dataGridView1.DataSource = datatable;
+           
+        }
+
+        public void SøgSpecifiktEmnetyperFriTeskt(SearchForm searchForm)
         {
             var constring = new SqlConnection(DbConnectionString);
 
             constring.Open();
 
-            //seachform.listBox1.Items.Clear();
             
-
-            var sqlDataAdapter =
-                new SqlDataAdapter(
-                    "SELECT * from tblSagsoplysninger where journalNr like '%" + seachform.textBox1Søg.Text + "%'",
-                    constring);
-
-            var emnetyperDt = new DataTable();
-            sqlDataAdapter.Fill(emnetyperDt);
-            seachform.dataGridView1.DataSource = emnetyperDt;
-
-            //var dataset = new DataSet();
-            //sqlDataAdapter.Fill(dataset);
-            //seachform.dataGridView1.DataSource = dataset.Tables[0];
-
-            //tilføjer til list2
-            //foreach (DataRow row in emnetyperDt.Rows)
-            //{
-            //    foreach (var item in row.ItemArray)
-            //    {
-            //        seachform.listBox1.Items.Add(item);
-            //    }
-            //    //seachform.listBox1.Items.Add("KontaktPersoner: " + row["fornavn"] + " : " + row["efternavn"]);
-            //}
+            var sqlDataAdapter1 =
+            new SqlDataAdapter(
+             
+               "Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper" +
+               " where emnetype='"+ searchForm.comboBox1.SelectedItem +"' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox2Emnetyper.Text +"%'"   
+             ,
+             constring);
+  
+            var datatable1 = new DataTable();
+            sqlDataAdapter1.Fill(datatable1);
+            searchForm.dataGridView1.DataSource = datatable1;
+            searchForm.Refresh();
+            //searchForm.dataGridView1.Refresh();
+            
+           
         }
 
 
-        //select tblEmnetyper.emnetype,tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper
+
+        // Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper
+        //    where emnetype= 'Mad' and sagens_titel = 'Klima-litteratur';
+
+        //     like'%" +
+        // searchForm.textBox2Emnetyper.Text.ToString() + "%' and" + searchForm.comboBoxEmnetyper.Text
+
+        //   "Select tblEmnetyper.emnetype,tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper where sagens_titel like '%" +
+        // searchForm.textBox2Emnetyper.Text + "%' OR sagens_titel like '%" + searchForm.textBox2Emnetyper.Text +
+        // "%'",
 
 
+
+
+
+
+
+
+        public void FillEmnetypeComboBox(SearchForm searchForm)
+        {
+            var constring = new SqlConnection(DbConnectionString);
+
+            constring.Open();
+
+            var SqlDataAdapterEm = new SqlDataAdapter("select * from tblEmnetyper order by emnetype", constring);
+
+            var datatableCmEm = new DataTable();
+
+            SqlDataAdapterEm.Fill(datatableCmEm);
+
+            for (int i = 0; i < datatableCmEm.Rows.Count; i++)
+            {
+                searchForm.comboBox1.Items.Add(datatableCmEm.Rows[i]["emnetype"]);
+            }
+            constring.Close();
+        }
     }
 }
