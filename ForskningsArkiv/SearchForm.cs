@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using ForskningsArkiv.ConnectionDB;
+using ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB;
 
 namespace ForskningsArkiv
 {
@@ -32,22 +33,18 @@ namespace ForskningsArkiv
 
         private void button2Emnetyper_Click(object sender, EventArgs e)
         {
-            _db = new DB();
-
-            _db.SøgSpecifiktEmnetyperFriTeskt(this);
-
-
+            var emnetypeSøgDBe = new EmnetypeSøgDB();
+            emnetypeSøgDBe.SøgSpecifiktEmnetyperFriTeskt(this);
         }
 
         private void SearchForm_Load(object sender, EventArgs e)
         {
-            _db = new DB();
-            _db.FillEmnetypeComboBox(this);
+
+            var emnetypeSøgDBe = new EmnetypeSøgDB();
+            emnetypeSøgDBe.FillEmnetypeComboBox(this);
         }
 
-        private void comboBoxEmnetyper_MouseClick(object sender, MouseEventArgs e)
-        {
-        }
+        
 
        
     }

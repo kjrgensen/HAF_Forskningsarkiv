@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionDB\DB.cs" />
+    <Compile Include="ConnectionDB\SpecifikationsSøgDB\EmnetypeSøgDB.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
