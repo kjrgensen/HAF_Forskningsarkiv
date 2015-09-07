@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -13,7 +14,7 @@ namespace ForskningsArkiv.ConnectionDB
         //private ListBox ListBox1;
 
         public string DbConnectionString =
-            "Data Source=DESKTOP-FOS4ILV\\SQLEXPRESS;Initial Catalog=DBHAF;Integrated Security=True";
+            "Data Source=DESKTOP-8MJDH1B\\SQLEXPRESS;Initial Catalog=Sagnlandet;Integrated Security=True";
 
      
 
@@ -41,24 +42,37 @@ namespace ForskningsArkiv.ConnectionDB
 
         public void SøgSpecifiktEmnetyperFriTeskt(SearchForm searchForm)
         {
-            var constring = new SqlConnection(DbConnectionString);
-
-            constring.Open();
-
             
-            var sqlDataAdapter1 =
-            new SqlDataAdapter(
-             
-               "Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper" +
-               " where emnetype='"+ searchForm.comboBox1.SelectedItem +"' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox2Emnetyper.Text +"%'"   
-             ,
-             constring);
-  
-            var datatable1 = new DataTable();
-            sqlDataAdapter1.Fill(datatable1);
-            searchForm.dataGridView1.DataSource = datatable1;
-            searchForm.Refresh();
-            //searchForm.dataGridView1.Refresh();
+                var constring = new SqlConnection(DbConnectionString);
+
+                constring.Open();
+
+
+                var sqlDataAdapter1 =
+                new SqlDataAdapter(
+
+                   "Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper" +
+                   " where emnetype='" + searchForm.comboBox1.SelectedItem + "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox2Emnetyper.Text + "%'"
+                 ,
+                 constring);
+
+                var datatable1 = new DataTable();
+                sqlDataAdapter1.Fill(datatable1);
+            if (datatable1.Rows.Count ==0)
+            {
+                MessageBox.Show("Ingen rapporter fundet");
+            }
+            else
+            {
+                MessageBox.Show("fundet =" + datatable1.Rows.Count);
+            }
+            
+                searchForm.dataGridView1.DataSource = datatable1;
+                searchForm.Refresh();
+            
+           
+          
+            
             
            
         }
@@ -74,11 +88,6 @@ namespace ForskningsArkiv.ConnectionDB
         //   "Select tblEmnetyper.emnetype,tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper where sagens_titel like '%" +
         // searchForm.textBox2Emnetyper.Text + "%' OR sagens_titel like '%" + searchForm.textBox2Emnetyper.Text +
         // "%'",
-
-
-
-
-
 
 
 
