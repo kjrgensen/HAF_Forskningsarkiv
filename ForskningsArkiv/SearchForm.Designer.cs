@@ -49,30 +49,27 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridView1.CausesValidation = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(844, 46);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(633, 37);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(877, 544);
+            this.dataGridView1.Size = new System.Drawing.Size(658, 442);
             this.dataGridView1.TabIndex = 6;
             // 
             // textBox1Søg
             // 
-            this.textBox1Søg.Location = new System.Drawing.Point(16, 46);
-            this.textBox1Søg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1Søg.Location = new System.Drawing.Point(12, 37);
             this.textBox1Søg.Name = "textBox1Søg";
-            this.textBox1Søg.Size = new System.Drawing.Size(192, 22);
+            this.textBox1Søg.Size = new System.Drawing.Size(145, 20);
             this.textBox1Søg.TabIndex = 7;
             // 
             // buttonSøgFri
             // 
             this.buttonSøgFri.BackColor = System.Drawing.SystemColors.Control;
             this.buttonSøgFri.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonSøgFri.Location = new System.Drawing.Point(16, 78);
-            this.buttonSøgFri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSøgFri.Location = new System.Drawing.Point(12, 63);
             this.buttonSøgFri.Name = "buttonSøgFri";
-            this.buttonSøgFri.Size = new System.Drawing.Size(193, 30);
+            this.buttonSøgFri.Size = new System.Drawing.Size(145, 24);
             this.buttonSøgFri.TabIndex = 8;
             this.buttonSøgFri.Text = "Søg";
             this.buttonSøgFri.UseVisualStyleBackColor = false;
@@ -81,10 +78,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 17);
+            this.label1.Size = new System.Drawing.Size(111, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Søg i Sagsoplysninger";
             // 
@@ -92,10 +88,9 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(16, 614);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(12, 499);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1705, 39);
+            this.button1.Size = new System.Drawing.Size(1279, 32);
             this.button1.TabIndex = 4;
             this.button1.Text = "Afslut søg";
             this.button1.UseVisualStyleBackColor = false;
@@ -104,19 +99,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 140);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 17);
+            this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "Søg i Emnetyper";
             // 
             // button2Emnetyper
             // 
-            this.button2Emnetyper.Location = new System.Drawing.Point(16, 229);
-            this.button2Emnetyper.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2Emnetyper.Location = new System.Drawing.Point(12, 186);
             this.button2Emnetyper.Name = "button2Emnetyper";
-            this.button2Emnetyper.Size = new System.Drawing.Size(189, 28);
+            this.button2Emnetyper.Size = new System.Drawing.Size(142, 23);
             this.button2Emnetyper.TabIndex = 12;
             this.button2Emnetyper.Text = "Søg";
             this.button2Emnetyper.UseVisualStyleBackColor = true;
@@ -124,30 +117,26 @@
             // 
             // textBox2Emnetyper
             // 
-            this.textBox2Emnetyper.Location = new System.Drawing.Point(16, 197);
-            this.textBox2Emnetyper.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2Emnetyper.Location = new System.Drawing.Point(12, 160);
             this.textBox2Emnetyper.Name = "textBox2Emnetyper";
-            this.textBox2Emnetyper.Size = new System.Drawing.Size(188, 22);
+            this.textBox2Emnetyper.Size = new System.Drawing.Size(142, 20);
             this.textBox2Emnetyper.TabIndex = 13;
             // 
             // comboBox1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 164);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.MaxDropDownItems = 100;
+            this.comboBox1.Location = new System.Drawing.Point(12, 133);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(188, 24);
+            this.comboBox1.Size = new System.Drawing.Size(142, 21);
             this.comboBox1.TabIndex = 14;
             // 
             // SearchForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1756, 678);
+            this.ClientSize = new System.Drawing.Size(1317, 551);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox2Emnetyper);
             this.Controls.Add(this.button2Emnetyper);
@@ -157,7 +146,6 @@
             this.Controls.Add(this.textBox1Søg);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SearchForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchForm";

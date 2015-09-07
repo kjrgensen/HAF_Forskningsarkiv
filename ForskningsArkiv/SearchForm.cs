@@ -36,8 +36,6 @@ namespace ForskningsArkiv
 
             _db.SøgSpecifiktEmnetyperFriTeskt(this);
 
-         
-
 
         }
 
