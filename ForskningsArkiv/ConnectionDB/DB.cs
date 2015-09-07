@@ -56,6 +56,15 @@ namespace ForskningsArkiv.ConnectionDB
   
             var datatable1 = new DataTable();
             sqlDataAdapter1.Fill(datatable1);
+            if (datatable1.Rows.Count == 0)
+                   {
+                MessageBox.Show("Ingen rapporter fundet");
+                           }
+                       else
+           {
+                MessageBox.Show("fundet =" + datatable1.Rows.Count);
+                            }
+
             searchForm.dataGridView1.DataSource = datatable1;
             searchForm.Refresh();
             //searchForm.dataGridView1.Refresh();
