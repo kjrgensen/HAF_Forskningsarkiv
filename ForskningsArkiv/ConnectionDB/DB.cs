@@ -15,10 +15,7 @@ namespace ForskningsArkiv.ConnectionDB
         public string DbConnectionString =
             "Data Source=DESKTOP-FOS4ILV\\SQLEXPRESS;Initial Catalog=DBHAF;Integrated Security=True";
 
-     
-
-
-        //select tblEmnetyper.emnetype,tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper
+        
         public void EmnetyperSøgFritekst(SearchForm searchForm)
         {
 
@@ -58,12 +55,8 @@ namespace ForskningsArkiv.ConnectionDB
             sqlDataAdapter1.Fill(datatable1);
             searchForm.dataGridView1.DataSource = datatable1;
             searchForm.Refresh();
-            //searchForm.dataGridView1.Refresh();
-            
-           
+          
         }
-
-
 
         // Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper
         //    where emnetype= 'Mad' and sagens_titel = 'Klima-litteratur';
@@ -76,11 +69,7 @@ namespace ForskningsArkiv.ConnectionDB
         // "%'",
 
 
-
-
-
-
-
+        //fylder Combobox ud med indhold fra Emnetyper fra db.
 
         public void FillEmnetypeComboBox(SearchForm searchForm)
         {
