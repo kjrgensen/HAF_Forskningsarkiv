@@ -11,11 +11,11 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 {
    public class EmnetypeSøgDB
    {
-       public DB _db;
+       public DBConnectionstring _db;
 
         public void SøgSpecifiktEmnetyperFriTeskt(SearchForm searchForm)
         {
-            _db = new DB();
+            _db = new DBConnectionstring();
             var constring = new SqlConnection(_db.DbConnectionString);
 
             constring.Open();
@@ -49,7 +49,7 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
         //udfyld combobox med Emnetyper fra DB
         public void FillEmnetypeComboBox(SearchForm searchForm)
         {
-            _db = new DB();
+            _db = new DBConnectionstring();
             var constring = new SqlConnection(_db.DbConnectionString);
 
             constring.Open();

@@ -7,7 +7,7 @@ namespace ForskningsArkiv
 {
     public partial class SearchForm : Form
     {
-        private DB _db;
+        private DBConnectionstring _db;
 
         public SearchForm()
         {
@@ -27,14 +27,14 @@ namespace ForskningsArkiv
 
         private void buttonSøgFri_Click(object sender, EventArgs e)
         {
-            _db = new DB();
-            _db.EmnetyperSøgFritekst(this);
+           var sagstitelSøgdb = new SagstitelSøgDB();
+            sagstitelSøgdb.SagstitelSøgFritekst(this);
         }
 
         private void button2Emnetyper_Click(object sender, EventArgs e)
         {
-            var emnetypeSøgDBe = new EmnetypeSøgDB();
-            emnetypeSøgDBe.SøgSpecifiktEmnetyperFriTeskt(this);
+            var emnetypeSøgDB = new EmnetypeSøgDB();
+            emnetypeSøgDB.SøgSpecifiktEmnetyperFriTeskt(this);
         }
 
         private void SearchForm_Load(object sender, EventArgs e)

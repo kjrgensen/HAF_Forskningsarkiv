@@ -44,8 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionDB\DB.cs" />
-    <Compile Include="ConnectionDB\SpecifikationsSøgDB\EmnetypeSøgDB.cs" />
+    <Compile Include="DatabaseHAF\DBConnectionstring.cs" />
+    <Compile Include="DatabaseHAF\SøgDB\EmnetypeSøgDB.cs" />
+    <Compile Include="DatabaseHAF\SøgDB\SagstitelSøgDB.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
