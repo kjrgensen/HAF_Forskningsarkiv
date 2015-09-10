@@ -10,6 +10,7 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
         public void SøgSpecifiktEmnetyperFriTeskt(SearchForm searchForm)
         {
+            
             _db = new DBConnectionstring();
             var constring = new SqlConnection(_db.DbConnectionString);
 

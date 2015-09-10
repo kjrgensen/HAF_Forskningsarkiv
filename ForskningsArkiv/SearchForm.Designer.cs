@@ -37,6 +37,10 @@
             this.button2Emnetyper = new System.Windows.Forms.Button();
             this.textBox2Emnetyper = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.MatriealetypeBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.materialfriesøg = new System.Windows.Forms.TextBox();
+            this.søgMaterialetyper = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,16 +64,16 @@
             // 
             this.textBox1Søg.Location = new System.Drawing.Point(12, 37);
             this.textBox1Søg.Name = "textBox1Søg";
-            this.textBox1Søg.Size = new System.Drawing.Size(145, 20);
+            this.textBox1Søg.Size = new System.Drawing.Size(166, 20);
             this.textBox1Søg.TabIndex = 7;
             // 
             // buttonSøgFri
             // 
             this.buttonSøgFri.BackColor = System.Drawing.SystemColors.Control;
             this.buttonSøgFri.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonSøgFri.Location = new System.Drawing.Point(12, 63);
+            this.buttonSøgFri.Location = new System.Drawing.Point(195, 37);
             this.buttonSøgFri.Name = "buttonSøgFri";
-            this.buttonSøgFri.Size = new System.Drawing.Size(145, 24);
+            this.buttonSøgFri.Size = new System.Drawing.Size(74, 20);
             this.buttonSøgFri.TabIndex = 8;
             this.buttonSøgFri.Text = "Søg";
             this.buttonSøgFri.UseVisualStyleBackColor = false;
@@ -99,7 +103,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 114);
+            this.label2.Location = new System.Drawing.Point(9, 380);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 11;
@@ -107,9 +111,9 @@
             // 
             // button2Emnetyper
             // 
-            this.button2Emnetyper.Location = new System.Drawing.Point(12, 186);
+            this.button2Emnetyper.Location = new System.Drawing.Point(160, 411);
             this.button2Emnetyper.Name = "button2Emnetyper";
-            this.button2Emnetyper.Size = new System.Drawing.Size(142, 23);
+            this.button2Emnetyper.Size = new System.Drawing.Size(96, 23);
             this.button2Emnetyper.TabIndex = 12;
             this.button2Emnetyper.Text = "Søg";
             this.button2Emnetyper.UseVisualStyleBackColor = true;
@@ -117,7 +121,7 @@
             // 
             // textBox2Emnetyper
             // 
-            this.textBox2Emnetyper.Location = new System.Drawing.Point(12, 160);
+            this.textBox2Emnetyper.Location = new System.Drawing.Point(9, 426);
             this.textBox2Emnetyper.Name = "textBox2Emnetyper";
             this.textBox2Emnetyper.Size = new System.Drawing.Size(142, 20);
             this.textBox2Emnetyper.TabIndex = 13;
@@ -126,11 +130,46 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 133);
+            this.comboBox1.Location = new System.Drawing.Point(9, 399);
             this.comboBox1.MaxDropDownItems = 50;
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(142, 21);
             this.comboBox1.TabIndex = 14;
+            // 
+            // MatriealetypeBox
+            // 
+            this.MatriealetypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MatriealetypeBox.FormattingEnabled = true;
+            this.MatriealetypeBox.Location = new System.Drawing.Point(12, 311);
+            this.MatriealetypeBox.MaxDropDownItems = 50;
+            this.MatriealetypeBox.Name = "MatriealetypeBox";
+            this.MatriealetypeBox.Size = new System.Drawing.Size(142, 21);
+            this.MatriealetypeBox.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 295);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Søg i MaterialeTyper";
+            // 
+            // materialfriesøg
+            // 
+            this.materialfriesøg.Location = new System.Drawing.Point(12, 338);
+            this.materialfriesøg.Name = "materialfriesøg";
+            this.materialfriesøg.Size = new System.Drawing.Size(142, 20);
+            this.materialfriesøg.TabIndex = 17;
+            // 
+            // søgMaterialetyper
+            // 
+            this.søgMaterialetyper.Location = new System.Drawing.Point(160, 322);
+            this.søgMaterialetyper.Name = "søgMaterialetyper";
+            this.søgMaterialetyper.Size = new System.Drawing.Size(96, 23);
+            this.søgMaterialetyper.TabIndex = 18;
+            this.søgMaterialetyper.Text = "Søg";
+            this.søgMaterialetyper.UseVisualStyleBackColor = true;
             // 
             // SearchForm
             // 
@@ -139,6 +178,10 @@
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1317, 551);
+            this.Controls.Add(this.søgMaterialetyper);
+            this.Controls.Add(this.materialfriesøg);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.MatriealetypeBox);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox2Emnetyper);
             this.Controls.Add(this.button2Emnetyper);
@@ -170,5 +213,9 @@
         internal System.Windows.Forms.Button button2Emnetyper;
         internal System.Windows.Forms.TextBox textBox2Emnetyper;
         public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox MatriealetypeBox;
+        private System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.TextBox materialfriesøg;
+        internal System.Windows.Forms.Button søgMaterialetyper;
     }
 }
