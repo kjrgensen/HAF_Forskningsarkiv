@@ -13,7 +13,7 @@ namespace ForskningsArkiv
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VælgBrugerAdmin());
+            Application.Run(new LoginForm());
         }
     }
 }

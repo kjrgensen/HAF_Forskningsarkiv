@@ -26,12 +26,18 @@ namespace ForskningsArkiv
 
         private void buttonSøgFri_Click(object sender, EventArgs e)
         {
-            var sagstitelSøgdb = new SagstitelSøgDB();
-            sagstitelSøgdb.SagstitelSøgFritekst(this);
+            //var sagstitelSøgdb = new SagstitelSøgDB();
+            //sagstitelSøgdb.SagstitelSøgFritekst(this);
         }
 
         private void button2Emnetyper_Click(object sender, EventArgs e)
         {
+           
+          var sagstitelSøgdb = new SagstitelSøgDB();
+          sagstitelSøgdb.SagstitelSøgFritekst(this);
+          
+          
+            
             var emnetypeSøgDB = new EmnetypeSøgDB();
             emnetypeSøgDB.SøgSpecifiktEmnetyperFriTeskt(this);
         }
