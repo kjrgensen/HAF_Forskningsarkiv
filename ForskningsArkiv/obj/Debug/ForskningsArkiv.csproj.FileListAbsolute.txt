@@ -19,6 +19,27 @@ C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\Forskning
 C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csproj.GenerateResource.Cache
 C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
 C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
+<<<<<<< HEAD
+C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe.config
+C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
+C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
+C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe
+C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.pdb
+C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.Form1.resources
+C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.Properties.Resources.resources
+C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.SearchForm.resources
+C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csproj.GenerateResource.Cache
+C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe.config
+C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
+C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
+C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe
+C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.pdb
+C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.Form1.resources
+C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.Properties.Resources.resources
+C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.SearchForm.resources
+C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csproj.GenerateResource.Cache
+C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csprojResolveAssemblyReference.cache
+=======
 C:\Users\Herprit\Desktop\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csprojResolveAssemblyReference.cache
 C:\Users\Steffen\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe.config
 C:\Users\Steffen\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
@@ -31,3 +52,4 @@ C:\Users\Steffen\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\
 C:\Users\Steffen\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.SearchForm.resources
 C:\Users\Steffen\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csproj.GenerateResource.Cache
 C:\Users\Steffen\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.LoginForm.resources
+>>>>>>> master
