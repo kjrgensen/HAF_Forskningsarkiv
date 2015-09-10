@@ -20,7 +20,7 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
                     "Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper" +
-                    " where emnetype='" + searchForm.comboBox1.SelectedItem +
+                    " where emnetype='" + searchForm.comboEmnetyper.SelectedItem +
                     "'and materialetype='" + searchForm.MatriealetypeBox.SelectedItem + 
                     "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox1Søg.Text + "%'"
                     ,
@@ -60,7 +60,7 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             for (var i = 0; i < datatableCmEm.Rows.Count; i++)
             {
-                searchForm.comboBox1.Items.Add(datatableCmEm.Rows[i]["emnetype"]);
+                searchForm.comboEmnetyper.Items.Add(datatableCmEm.Rows[i]["emnetype"]);
             }
             constring.Close();
         }

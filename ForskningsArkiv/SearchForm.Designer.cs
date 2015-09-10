@@ -34,10 +34,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button2Emnetyper = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboEmnetyper = new System.Windows.Forms.ComboBox();
             this.MatriealetypeBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.PeriodeLB = new System.Windows.Forms.Label();
+            this.PeriodeTPComboBox = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -62,15 +66,16 @@
             this.textBox1Søg.Name = "textBox1Søg";
             this.textBox1Søg.Size = new System.Drawing.Size(166, 20);
             this.textBox1Søg.TabIndex = 7;
+            this.textBox1Søg.TextChanged += new System.EventHandler(this.textBox1Søg_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Fritekstsøgning";
+            this.label1.Text = "Fritekstsøgning:";
             // 
             // button1
             // 
@@ -87,7 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 128);
+            this.label2.Location = new System.Drawing.Point(0, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 11;
@@ -95,29 +100,29 @@
             // 
             // button2Emnetyper
             // 
-            this.button2Emnetyper.Location = new System.Drawing.Point(9, 256);
+            this.button2Emnetyper.Location = new System.Drawing.Point(9, 448);
             this.button2Emnetyper.Name = "button2Emnetyper";
-            this.button2Emnetyper.Size = new System.Drawing.Size(618, 93);
+            this.button2Emnetyper.Size = new System.Drawing.Size(264, 31);
             this.button2Emnetyper.TabIndex = 12;
             this.button2Emnetyper.Text = "Søg";
             this.button2Emnetyper.UseVisualStyleBackColor = true;
             this.button2Emnetyper.Click += new System.EventHandler(this.button2Emnetyper_Click);
             // 
-            // comboBox1
+            // comboEmnetyper
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 153);
-            this.comboBox1.MaxDropDownItems = 50;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(139, 21);
-            this.comboBox1.TabIndex = 14;
+            this.comboEmnetyper.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboEmnetyper.FormattingEnabled = true;
+            this.comboEmnetyper.Location = new System.Drawing.Point(1, 64);
+            this.comboEmnetyper.MaxDropDownItems = 50;
+            this.comboEmnetyper.Name = "comboEmnetyper";
+            this.comboEmnetyper.Size = new System.Drawing.Size(139, 21);
+            this.comboEmnetyper.TabIndex = 14;
             // 
             // MatriealetypeBox
             // 
             this.MatriealetypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MatriealetypeBox.FormattingEnabled = true;
-            this.MatriealetypeBox.Location = new System.Drawing.Point(9, 216);
+            this.MatriealetypeBox.Location = new System.Drawing.Point(1, 104);
             this.MatriealetypeBox.MaxDropDownItems = 50;
             this.MatriealetypeBox.Name = "MatriealetypeBox";
             this.MatriealetypeBox.Size = new System.Drawing.Size(139, 21);
@@ -126,11 +131,45 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 187);
+            this.label3.Location = new System.Drawing.Point(-2, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 13);
             this.label3.TabIndex = 16;
             this.label3.Text = "Søg i MaterialeTyper";
+            // 
+            // PeriodeLB
+            // 
+            this.PeriodeLB.AutoSize = true;
+            this.PeriodeLB.Location = new System.Drawing.Point(0, 8);
+            this.PeriodeLB.Name = "PeriodeLB";
+            this.PeriodeLB.Size = new System.Drawing.Size(43, 13);
+            this.PeriodeLB.TabIndex = 17;
+            this.PeriodeLB.Text = "Periode";
+            // 
+            // PeriodeTPComboBox
+            // 
+            this.PeriodeTPComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PeriodeTPComboBox.FormattingEnabled = true;
+            this.PeriodeTPComboBox.Location = new System.Drawing.Point(1, 24);
+            this.PeriodeTPComboBox.MaxDropDownItems = 50;
+            this.PeriodeTPComboBox.Name = "PeriodeTPComboBox";
+            this.PeriodeTPComboBox.Size = new System.Drawing.Size(139, 21);
+            this.PeriodeTPComboBox.TabIndex = 18;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.PeriodeTPComboBox);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.PeriodeLB);
+            this.panel1.Controls.Add(this.MatriealetypeBox);
+            this.panel1.Controls.Add(this.comboEmnetyper);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(12, 213);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(234, 155);
+            this.panel1.TabIndex = 19;
             // 
             // SearchForm
             // 
@@ -139,11 +178,8 @@
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1317, 551);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.MatriealetypeBox);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2Emnetyper);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1Søg);
             this.Controls.Add(this.dataGridView1);
@@ -154,6 +190,8 @@
             this.TransparencyKey = System.Drawing.Color.LightGray;
             this.Load += new System.EventHandler(this.SearchForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,8 +205,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         internal System.Windows.Forms.Button button2Emnetyper;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox comboEmnetyper;
         public System.Windows.Forms.ComboBox MatriealetypeBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label PeriodeLB;
+        public System.Windows.Forms.ComboBox PeriodeTPComboBox;
+        private System.Windows.Forms.Panel panel1;
     }
 }

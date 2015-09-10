@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Eventing.Reader;
 using System.Windows.Forms;
 using ForskningsArkiv.ConnectionDB;
 using ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB;
@@ -35,21 +36,32 @@ namespace ForskningsArkiv
         {
             //if (textBox2Emnetyper.Text.Length>0)
             //{
-            var emnetypeSøgDB = new EmnetypeSøgDB();
-            emnetypeSøgDB.SøgSpecifiktEmnetyperFriTeskt(this);
+            //var emnetypeSøgDB = new EmnetypeSøgDB();
+            //emnetypeSøgDB.SøgSpecifiktEmnetyperFriTeskt(this);
 
 
             //    var materialetypeSøg = new MaterialetypeSøg();  
             //materialetypeSøg.SøgSpecifiktMaterialetypeFriTeskt(this);
 
+            var sagstitelSøgdb = new SagstitelSøgDB();
 
 
-            //if (textBox1Søg.Text.Length>0)
-            //{
-            //var sagstitelSøgdb = new SagstitelSøgDB();
-
+           
             //sagstitelSøgdb.SagstitelSøgFritekst(this);
-            ////textBox1Søg.Clear();
+            
+           
+           sagstitelSøgdb.søgComboBox(this);
+
+           
+
+
+           
+
+
+
+
+
+
 
             //}
 
@@ -63,6 +75,11 @@ namespace ForskningsArkiv
 
             var matetialetypesøg = new MaterialetypeSøg();
             matetialetypesøg.FillMaterielTypeComboBox(this);
+
+            var fillcomboperiode = new FillComboBoxFromDB();
+            fillcomboperiode.FillPeriodeCombobox(this);
+
+
         }
 
         private void søgMaterialetyper_Click(object sender, EventArgs e)
@@ -70,5 +87,14 @@ namespace ForskningsArkiv
             var materialesøgDB = new MaterialetypeSøg();
             materialesøgDB.SøgSpecifiktMaterialetypeFriTeskt(this);
         }
+
+        private void textBox1Søg_TextChanged(object sender, EventArgs e)
+        {
+
+            //var FriTekstSøgDB = new SagstitelSøgDB();
+            //FriTekstSøgDB.SagstitelSøgFritekst(this);
+        }
+
+    
     }
 }
