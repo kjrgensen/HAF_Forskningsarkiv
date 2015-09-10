@@ -26,11 +26,15 @@ namespace ForskningsArkiv
         {
             if (kodeordTextbox.Text == "admin")
             {
-                Form form2 = new Form();
+                   VælgBrugerAdmin brugerAdmin = new VælgBrugerAdmin();
                 this.Hide();
-                form2.Show();
+              brugerAdmin.Show();
             }
-            MessageBox.Show("Adgangskoden er forkert.");
+            else
+            {
+                MessageBox.Show("Adgangskoden er forkert.");
+            }
+        
         }
     }
 }
