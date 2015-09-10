@@ -9,6 +9,6 @@
         //private ListBox ListBox1;
 
         public string DbConnectionString =
-            "Data Source=DESKTOP-FOS4ILV\\SQLEXPRESS;Initial Catalog=DBHAF;Integrated Security=True";
+            "Data Source=XENOSDK\\SQLEXPRESS;Initial Catalog=Sagnland;Integrated Security=True";
     }
 }
