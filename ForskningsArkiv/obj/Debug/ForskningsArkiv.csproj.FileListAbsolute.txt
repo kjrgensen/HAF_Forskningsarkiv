@@ -37,3 +37,13 @@ C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArk
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.VælgBrugerAdmin.resources
+C:\Users\xenos\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe.config
+C:\Users\xenos\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
+C:\Users\xenos\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
+C:\Users\xenos\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe
+C:\Users\xenos\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.pdb
+C:\Users\xenos\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.VælgBrugerAdmin.resources
+C:\Users\xenos\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.LoginForm.resources
+C:\Users\xenos\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.Properties.Resources.resources
+C:\Users\xenos\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.SearchForm.resources
+C:\Users\xenos\Documents\GitHub\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csproj.GenerateResource.Cache
