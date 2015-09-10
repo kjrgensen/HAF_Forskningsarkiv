@@ -18,16 +18,15 @@ namespace ForskningsArkiv
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var form1 = new Form1();
+            var form1 = new VælgBrugerAdmin();
             form1.Show();
 
             Close();
         }
 
-
         private void buttonSøgFri_Click(object sender, EventArgs e)
         {
-           var sagstitelSøgdb = new SagstitelSøgDB();
+            var sagstitelSøgdb = new SagstitelSøgDB();
             sagstitelSøgdb.SagstitelSøgFritekst(this);
         }
 
@@ -39,13 +38,8 @@ namespace ForskningsArkiv
 
         private void SearchForm_Load(object sender, EventArgs e)
         {
-
             var emnetypeSøgDBe = new EmnetypeSøgDB();
             emnetypeSøgDBe.FillEmnetypeComboBox(this);
         }
-
-        
-
-       
     }
 }

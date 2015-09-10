@@ -1,26 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ForskningsArkiv
 {
-    public partial class Form1 : Form
+    public partial class VælgBrugerAdmin : Form
     {
-        public Form1()
+        public VælgBrugerAdmin()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SearchForm searchForm = new SearchForm();
-            this.Hide();
+            var searchForm = new SearchForm();
+            Hide();
             searchForm.ShowDialog();
         }
 

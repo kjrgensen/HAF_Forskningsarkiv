@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 {
-    public  class SagstitelSøgDB
+    public class SagstitelSøgDB
     {
-
         public DBConnectionstring _db;
+
         public void SagstitelSøgFritekst(SearchForm searchForm)
         {
             _db = new DBConnectionstring();

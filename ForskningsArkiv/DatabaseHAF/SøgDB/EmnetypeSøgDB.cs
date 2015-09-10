@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 {
-   public class EmnetypeSøgDB
-   {
-       public DBConnectionstring _db;
+    public class EmnetypeSøgDB
+    {
+        public DBConnectionstring _db;
 
         public void SøgSpecifiktEmnetyperFriTeskt(SearchForm searchForm)
         {
@@ -38,12 +33,10 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
             else
             {
                 MessageBox.Show("fundet =" + datatable1.Rows.Count);
-
             }
 
             searchForm.dataGridView1.DataSource = datatable1;
             searchForm.Refresh();
-
         }
 
         //udfyld combobox med Emnetyper fra DB
@@ -66,6 +59,5 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
             }
             constring.Close();
         }
-
     }
 }
