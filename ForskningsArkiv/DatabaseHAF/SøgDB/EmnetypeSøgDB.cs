@@ -10,8 +10,6 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
         public void SøgSpecifiktEmnetyperFriTeskt(SearchForm searchForm)
         {
-            
-          
             _db = new DBConnectionstring();
             var constring = new SqlConnection(_db.DbConnectionString);
 
@@ -21,7 +19,7 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
                 new SqlDataAdapter(
                     "Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper" +
                     " where emnetype='" + searchForm.comboEmnetyper.SelectedItem +
-                    "'and materialetype='" + searchForm.MatriealetypeBox.SelectedItem + 
+                    "'and materialetype='" + searchForm.MatriealetypeBox.SelectedItem +
                     "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox1Søg.Text + "%'"
                     ,
                     constring);
@@ -38,7 +36,6 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
                 MessageBox.Show("fundet =" + datatable1.Rows.Count);
             }
 
-           
 
             searchForm.dataGridView1.DataSource = datatable1;
             searchForm.Refresh();
@@ -64,11 +61,5 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
             }
             constring.Close();
         }
-
-
-
-        //  "Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper" +
-             //       " where emnetype='" + searchForm.comboBox1.SelectedItem +
-               ///     "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox1Søg.Text + "%'"
     }
 }

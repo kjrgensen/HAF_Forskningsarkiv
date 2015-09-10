@@ -40,6 +40,7 @@
             this.PeriodeLB = new System.Windows.Forms.Label();
             this.PeriodeTPComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtFritekstsøg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -171,6 +172,16 @@
             this.panel1.Size = new System.Drawing.Size(234, 155);
             this.panel1.TabIndex = 19;
             // 
+            // BtFritekstsøg
+            // 
+            this.BtFritekstsøg.Location = new System.Drawing.Point(12, 63);
+            this.BtFritekstsøg.Name = "BtFritekstsøg";
+            this.BtFritekstsøg.Size = new System.Drawing.Size(166, 31);
+            this.BtFritekstsøg.TabIndex = 20;
+            this.BtFritekstsøg.Text = "Søg";
+            this.BtFritekstsøg.UseVisualStyleBackColor = true;
+            this.BtFritekstsøg.Click += new System.EventHandler(this.BtFritekstsøg_Click);
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,6 +189,7 @@
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1317, 551);
+            this.Controls.Add(this.BtFritekstsøg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2Emnetyper);
             this.Controls.Add(this.label1);
@@ -211,5 +223,6 @@
         private System.Windows.Forms.Label PeriodeLB;
         public System.Windows.Forms.ComboBox PeriodeTPComboBox;
         private System.Windows.Forms.Panel panel1;
+        internal System.Windows.Forms.Button BtFritekstsøg;
     }
 }

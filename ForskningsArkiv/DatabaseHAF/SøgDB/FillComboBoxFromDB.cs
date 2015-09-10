@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ForskningsArkiv.ConnectionDB;
 
 namespace ForskningsArkiv.DatabaseHAF.SøgDB
 {
-  public  class FillComboBoxFromDB
+    public class FillComboBoxFromDB
     {
         public DBConnectionstring _db;
 
@@ -33,16 +28,15 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
             constring.Close();
         }
 
-
         public void FillMaterielTypeComboBox(SearchForm searchForm)
         {
-
             _db = new DBConnectionstring();
             var constring = new SqlConnection(_db.DbConnectionString);
 
             constring.Open();
 
-            var SqlDataAdapterEm = new SqlDataAdapter("select * from tblMaterialeTyper order by materialetype", constring);
+            var SqlDataAdapterEm = new SqlDataAdapter("select * from tblMaterialeTyper order by materialetype",
+                constring);
 
             var datatableCmEm = new DataTable();
 
@@ -53,11 +47,10 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
                 searchForm.MatriealetypeBox.Items.Add(datatableCmEm.Rows[i]["materialetype"]);
             }
             constring.Close();
-
         }
 
-      public void FillPeriodeCombobox(SearchForm searchForm)
-      {
+        public void FillPeriodeCombobox(SearchForm searchForm)
+        {
             _db = new DBConnectionstring();
             var constring = new SqlConnection(_db.DbConnectionString);
 
@@ -74,12 +67,6 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
                 searchForm.PeriodeTPComboBox.Items.Add(datatableCmEm.Rows[i]["periodetype"]);
             }
             constring.Close();
-
-
         }
     }
-
-
-
-
 }

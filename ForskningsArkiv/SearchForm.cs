@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.Eventing.Reader;
 using System.Windows.Forms;
 using ForskningsArkiv.ConnectionDB;
 using ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB;
@@ -46,25 +45,10 @@ namespace ForskningsArkiv
             var sagstitelSøgdb = new SagstitelSøgDB();
 
 
-           
             //sagstitelSøgdb.SagstitelSøgFritekst(this);
-            
-           
-           sagstitelSøgdb.søgComboBox(this);
-
-           
 
 
-           
-
-
-
-
-
-
-
-            //}
-
+            sagstitelSøgdb.søgComboBox(this);
         }
 
         private void SearchForm_Load(object sender, EventArgs e)
@@ -78,8 +62,6 @@ namespace ForskningsArkiv
 
             var fillcomboperiode = new FillComboBoxFromDB();
             fillcomboperiode.FillPeriodeCombobox(this);
-
-
         }
 
         private void søgMaterialetyper_Click(object sender, EventArgs e)
@@ -90,11 +72,14 @@ namespace ForskningsArkiv
 
         private void textBox1Søg_TextChanged(object sender, EventArgs e)
         {
-
             //var FriTekstSøgDB = new SagstitelSøgDB();
             //FriTekstSøgDB.SagstitelSøgFritekst(this);
         }
 
-    
+        private void BtFritekstsøg_Click(object sender, EventArgs e)
+        {
+            var sagstitelSøgdb = new SagstitelSøgDB();
+            sagstitelSøgdb.SagstitelSøgFritekst(this);
+        }
     }
 }
