@@ -19,10 +19,20 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
                 "where sagens_titel like'" + searchForm.textBox1Søg.Text + "%'";
 
 
-            var cmd = new SqlCommand(søgfri, constring);
+            var SøgFriCmd= new SqlCommand(søgfri, constring);
 
+            var SøgComboxCmd = new SqlCommand("Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype, tblPeriodetyper.periodetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper, tblPeriodetyper" +
+                " where emnetype='" + searchForm.comboEmnetyper.Text +
+                "'and materialetype='" + searchForm.MatriealetypeBox.Text +
+                "'and periodetype='" + searchForm.PeriodeTPComboBox.Text +
+                "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox1Søg.Text + "%'", constring);
+ 
 
             var sqlDataAdapter1 = new SqlDataAdapter();
+           
+            sqlDataAdapter1.SelectCommand = SøgFriCmd;
+            sqlDataAdapter1.SelectCommand = SøgComboxCmd;
+            
 
             //var sqlDataAdapter1 =
             //     new SqlDataAdapter(
@@ -36,7 +46,7 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
             //         , constring
             //        );
 
-            sqlDataAdapter1.SelectCommand = cmd;
+
 
             var datatable = new DataTable();
 

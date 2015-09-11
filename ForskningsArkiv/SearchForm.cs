@@ -45,10 +45,10 @@ namespace ForskningsArkiv
             var sagstitelSøgdb = new SagstitelSøgDB();
 
 
-            //sagstitelSøgdb.SagstitelSøgFritekst(this);
+            sagstitelSøgdb.SagstitelSøgFritekst(this);
 
 
-            sagstitelSøgdb.søgComboBox(this);
+            //sagstitelSøgdb.søgComboBox(this);
         }
 
         private void SearchForm_Load(object sender, EventArgs e)
