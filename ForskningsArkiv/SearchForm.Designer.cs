@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1Søg = new System.Windows.Forms.TextBox();
+            this.textBoxFrisøgning = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2Emnetyper = new System.Windows.Forms.Button();
+            this.buttonSøg = new System.Windows.Forms.Button();
             this.comboEmnetyper = new System.Windows.Forms.ComboBox();
             this.MatriealetypeBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PeriodeLB = new System.Windows.Forms.Label();
             this.PeriodeTPComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtFritekstsøg = new System.Windows.Forms.Button();
+            this.textboxSagstitel = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,13 +62,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(658, 442);
             this.dataGridView1.TabIndex = 6;
             // 
-            // textBox1Søg
+            // textBoxFrisøgning
             // 
-            this.textBox1Søg.Location = new System.Drawing.Point(12, 37);
-            this.textBox1Søg.Name = "textBox1Søg";
-            this.textBox1Søg.Size = new System.Drawing.Size(166, 20);
-            this.textBox1Søg.TabIndex = 7;
-            this.textBox1Søg.TextChanged += new System.EventHandler(this.textBox1Søg_TextChanged);
+            this.textBoxFrisøgning.Location = new System.Drawing.Point(12, 37);
+            this.textBoxFrisøgning.Name = "textBoxFrisøgning";
+            this.textBoxFrisøgning.Size = new System.Drawing.Size(166, 20);
+            this.textBoxFrisøgning.TabIndex = 7;
+            this.textBoxFrisøgning.TextChanged += new System.EventHandler(this.textBox1Søg_TextChanged);
             // 
             // label1
             // 
@@ -99,15 +100,15 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Søg i Emnetyper";
             // 
-            // button2Emnetyper
+            // buttonSøg
             // 
-            this.button2Emnetyper.Location = new System.Drawing.Point(9, 448);
-            this.button2Emnetyper.Name = "button2Emnetyper";
-            this.button2Emnetyper.Size = new System.Drawing.Size(264, 31);
-            this.button2Emnetyper.TabIndex = 12;
-            this.button2Emnetyper.Text = "Søg";
-            this.button2Emnetyper.UseVisualStyleBackColor = true;
-            this.button2Emnetyper.Click += new System.EventHandler(this.button2Emnetyper_Click);
+            this.buttonSøg.Location = new System.Drawing.Point(12, 345);
+            this.buttonSøg.Name = "buttonSøg";
+            this.buttonSøg.Size = new System.Drawing.Size(264, 31);
+            this.buttonSøg.TabIndex = 12;
+            this.buttonSøg.Text = "Søg";
+            this.buttonSøg.UseVisualStyleBackColor = true;
+            this.buttonSøg.Click += new System.EventHandler(this.button2Emnetyper_Click);
             // 
             // comboEmnetyper
             // 
@@ -167,20 +168,26 @@
             this.panel1.Controls.Add(this.MatriealetypeBox);
             this.panel1.Controls.Add(this.comboEmnetyper);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(12, 213);
+            this.panel1.Location = new System.Drawing.Point(12, 170);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(234, 155);
             this.panel1.TabIndex = 19;
             // 
-            // BtFritekstsøg
+            // textboxSagstitel
             // 
-            this.BtFritekstsøg.Location = new System.Drawing.Point(12, 63);
-            this.BtFritekstsøg.Name = "BtFritekstsøg";
-            this.BtFritekstsøg.Size = new System.Drawing.Size(166, 31);
-            this.BtFritekstsøg.TabIndex = 20;
-            this.BtFritekstsøg.Text = "Søg";
-            this.BtFritekstsøg.UseVisualStyleBackColor = true;
-            this.BtFritekstsøg.Click += new System.EventHandler(this.BtFritekstsøg_Click);
+            this.textboxSagstitel.Location = new System.Drawing.Point(12, 144);
+            this.textboxSagstitel.Name = "textboxSagstitel";
+            this.textboxSagstitel.Size = new System.Drawing.Size(166, 20);
+            this.textboxSagstitel.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 128);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Sagstitel:";
             // 
             // SearchForm
             // 
@@ -189,11 +196,12 @@
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1317, 551);
-            this.Controls.Add(this.BtFritekstsøg);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textboxSagstitel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button2Emnetyper);
+            this.Controls.Add(this.buttonSøg);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1Søg);
+            this.Controls.Add(this.textBoxFrisøgning);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Name = "SearchForm";
@@ -212,17 +220,18 @@
         #endregion
 
         internal System.Windows.Forms.DataGridView dataGridView1;
-        public System.Windows.Forms.TextBox textBox1Søg;
+        public System.Windows.Forms.TextBox textBoxFrisøgning;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
-        internal System.Windows.Forms.Button button2Emnetyper;
+        internal System.Windows.Forms.Button buttonSøg;
         public System.Windows.Forms.ComboBox comboEmnetyper;
         public System.Windows.Forms.ComboBox MatriealetypeBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label PeriodeLB;
         public System.Windows.Forms.ComboBox PeriodeTPComboBox;
         private System.Windows.Forms.Panel panel1;
-        internal System.Windows.Forms.Button BtFritekstsøg;
+        public System.Windows.Forms.TextBox textboxSagstitel;
+        private System.Windows.Forms.Label label4;
     }
 }

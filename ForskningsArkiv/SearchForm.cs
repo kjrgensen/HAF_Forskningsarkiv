@@ -43,9 +43,17 @@ namespace ForskningsArkiv
             //materialetypeSøg.SøgSpecifiktMaterialetypeFriTeskt(this);
 
             var sagstitelSøgdb = new SagstitelSøgDB();
+            if (textBoxFrisøgning.Text.Length == 0)
+            {
+                sagstitelSøgdb.søgComboBox(this);
+            }
 
+            else
+            {
 
-            sagstitelSøgdb.SagstitelSøgFritekst(this);
+                sagstitelSøgdb.SagstitelSøgFritekst(this);
+            }
+
 
 
             //sagstitelSøgdb.søgComboBox(this);

@@ -14,38 +14,29 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             constring.Open();
 
+            //clear combo hvis man ønsker søge fritekst
+            searchForm.comboEmnetyper.ResetText();
+            searchForm.PeriodeTPComboBox.ResetText();
+            searchForm.MatriealetypeBox.ResetText();
+
             var søgfri =
                 " Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper " +
-                "where sagens_titel like'" + searchForm.textBox1Søg.Text + "%'";
+                "where sagens_titel like'" + searchForm.textBoxFrisøgning.Text + "%'";
 
 
-            var SøgFriCmd= new SqlCommand(søgfri, constring);
+            var SøgFriCmd = new SqlCommand(søgfri, constring);
 
-            var SøgComboxCmd = new SqlCommand("Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype, tblPeriodetyper.periodetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper, tblPeriodetyper" +
-                " where emnetype='" + searchForm.comboEmnetyper.Text +
-                "'and materialetype='" + searchForm.MatriealetypeBox.Text +
-                "'and periodetype='" + searchForm.PeriodeTPComboBox.Text +
-                "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox1Søg.Text + "%'", constring);
- 
+            //var SøgComboxCmd = new SqlCommand("Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype, tblPeriodetyper.periodetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper, tblPeriodetyper" +
+            //    " where emnetype='" + searchForm.comboEmnetyper.Text +
+            //    "'and materialetype='" + searchForm.MatriealetypeBox.Text +
+            //    "'and periodetype='" + searchForm.PeriodeTPComboBox.Text +
+            //    "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox1Søg.Text + "%'", constring);
+
 
             var sqlDataAdapter1 = new SqlDataAdapter();
-           
+
             sqlDataAdapter1.SelectCommand = SøgFriCmd;
-            sqlDataAdapter1.SelectCommand = SøgComboxCmd;
-            
-
-            //var sqlDataAdapter1 =
-            //     new SqlDataAdapter(
-
-            //         "Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype, tblPeriodetyper.periodetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper, tblPeriodetyper" +
-            //         " where emnetype='" + searchForm.comboBox1.Text +
-            //         "'and materialetype='" + searchForm.MatriealetypeBox.Text +
-            //         "'and periodetype='" + searchForm.PeriodeTPComboBox.Text +
-            //         "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox1Søg.Text + "%'"
-
-            //         , constring
-            //        );
-
+            //sqlDataAdapter1.SelectCommand = SøgComboxCmd;
 
 
             var datatable = new DataTable();
@@ -71,7 +62,7 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
                 " where emnetype='" + searchForm.comboEmnetyper.Text +
                 "'and materialetype='" + searchForm.MatriealetypeBox.Text +
                 "'and periodetype='" + searchForm.PeriodeTPComboBox.Text +
-                "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox1Søg.Text + "%'";
+                "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textboxSagstitel.Text + "%'";
 
 
             var sqlcom = new SqlCommand(ComboSøg, constring);

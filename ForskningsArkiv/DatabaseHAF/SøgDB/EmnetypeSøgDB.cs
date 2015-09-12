@@ -20,7 +20,7 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
                     "Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper" +
                     " where emnetype='" + searchForm.comboEmnetyper.SelectedItem +
                     "'and materialetype='" + searchForm.MatriealetypeBox.SelectedItem +
-                    "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox1Søg.Text + "%'"
+                    "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBoxFrisøgning.Text + "%'"
                     ,
                     constring);
 
