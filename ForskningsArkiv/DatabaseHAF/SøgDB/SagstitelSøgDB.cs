@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
@@ -18,6 +19,8 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
             searchForm.comboEmnetyper.ResetText();
             searchForm.PeriodeTPComboBox.ResetText();
             searchForm.MatriealetypeBox.ResetText();
+            
+       
 
             var søgfri =
                 " Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper " +
@@ -45,8 +48,10 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             searchForm.dataGridView1.DataSource = datatable;
 
+         
 
-            //constring.Close();
+            constring.Close();
+
         }
 
         public void søgComboBox(SearchForm searchForm)
@@ -56,6 +61,8 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             constring.Open();
 
+    
+            
 
             var ComboSøg =
                 "Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype, tblPeriodetyper.periodetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper, tblPeriodetyper" +
@@ -63,7 +70,6 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
                 "'and materialetype='" + searchForm.MatriealetypeBox.Text +
                 "'and periodetype='" + searchForm.PeriodeTPComboBox.Text +
                 "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textboxSagstitel.Text + "%'";
-
 
             var sqlcom = new SqlCommand(ComboSøg, constring);
 
@@ -76,7 +82,7 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
             sqlAdapter.Fill(datatable);
 
             searchForm.dataGridView1.DataSource = datatable;
-            //constring.Close();
+            constring.Close();
         }
     }
 }

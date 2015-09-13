@@ -55,11 +55,11 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridView1.CausesValidation = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(633, 37);
+            this.dataGridView1.Location = new System.Drawing.Point(372, 37);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(658, 442);
+            this.dataGridView1.Size = new System.Drawing.Size(919, 442);
             this.dataGridView1.TabIndex = 6;
             // 
             // textBoxFrisøgning
@@ -73,7 +73,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Location = new System.Drawing.Point(9, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 10;
@@ -175,7 +175,7 @@
             // 
             // textboxSagstitel
             // 
-            this.textboxSagstitel.Location = new System.Drawing.Point(12, 144);
+            this.textboxSagstitel.Location = new System.Drawing.Point(12, 76);
             this.textboxSagstitel.Name = "textboxSagstitel";
             this.textboxSagstitel.Size = new System.Drawing.Size(166, 20);
             this.textboxSagstitel.TabIndex = 21;
@@ -183,7 +183,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 128);
+            this.label4.Location = new System.Drawing.Point(12, 60);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 22;

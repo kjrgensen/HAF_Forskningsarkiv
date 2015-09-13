@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ForskningsArkiv.ConnectionDB;
 using ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB;
@@ -43,16 +45,33 @@ namespace ForskningsArkiv
             //materialetypeSøg.SøgSpecifiktMaterialetypeFriTeskt(this);
 
             var sagstitelSøgdb = new SagstitelSøgDB();
-            if (textBoxFrisøgning.Text.Length == 0)
+
+
+
+             if (comboEmnetyper.SelectedItem == null & PeriodeTPComboBox.SelectedItem == null)
             {
-                sagstitelSøgdb.søgComboBox(this);
+
+                var mt = new MaterialetypeSøg();
+                mt.SøgSpecifiktMaterialetypeFriTeskt(this);
             }
 
+           else if (textBoxFrisøgning.Text.Length == 0)
+            {
+                textBoxFrisøgning.Clear();
+
+                sagstitelSøgdb.søgComboBox(this);
+           
+
+            }
+
+         
             else
             {
 
                 sagstitelSøgdb.SagstitelSøgFritekst(this);
             }
+
+      
 
 
 
@@ -61,13 +80,14 @@ namespace ForskningsArkiv
 
         private void SearchForm_Load(object sender, EventArgs e)
         {
+            var filComboboxFraDb =  new FillComboBoxFromDB();
+            filComboboxFraDb.FillMaterielTypeComboBox(this);
+
+
             var emnetypeSøgDBe = new EmnetypeSøgDB();
             emnetypeSøgDBe.FillEmnetypeComboBox(this);
 
-
-            var matetialetypesøg = new MaterialetypeSøg();
-            matetialetypesøg.FillMaterielTypeComboBox(this);
-
+            
             var fillcomboperiode = new FillComboBoxFromDB();
             fillcomboperiode.FillPeriodeCombobox(this);
         }

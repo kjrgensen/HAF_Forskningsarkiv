@@ -40,25 +40,5 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
             searchForm.Refresh();
         }
 
-        public void FillMaterielTypeComboBox(SearchForm searchForm)
-        {
-            _db = new DBConnectionstring();
-            var constring = new SqlConnection(_db.DbConnectionString);
-
-            constring.Open();
-
-            var SqlDataAdapterEm = new SqlDataAdapter("select * from tblMaterialeTyper order by materialetype",
-                constring);
-
-            var datatableCmEm = new DataTable();
-
-            SqlDataAdapterEm.Fill(datatableCmEm);
-
-            for (var i = 0; i < datatableCmEm.Rows.Count; i++)
-            {
-                searchForm.MatriealetypeBox.Items.Add(datatableCmEm.Rows[i]["materialetype"]);
-            }
-            constring.Close();
-        }
     }
 }
