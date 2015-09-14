@@ -1,15 +1,21 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
-using System.Windows.Forms;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ForskningsArkiv.ConnectionDB;
 
-namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
+namespace ForskningsArkiv.DatabaseHAF.SøgDB
 {
-    public class EmnetypeSøgDB
+   public class PeriodetyperSøgDB
     {
-        public DBConnectionstring _db;
 
-        public void SøgSpecifiktEmnetyperFriTeskt(SearchForm searchForm)
-        {
+       public DBConnectionstring _db;
+        public void SøgFritekstPeriode(SearchForm searchForm)
+       {
+
             _db = new DBConnectionstring();
             var constring = new SqlConnection(_db.DbConnectionString);
 
@@ -17,8 +23,8 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
-                    "Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper" +
-                    " where emnetype='" + searchForm.comboEmnetyper.SelectedItem +                
+                    "Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype, tblPeriodetyper.periodetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper, tblPeriodetyper" +
+                    " where periodetype='" + searchForm.PeriodeTPComboBox.SelectedItem +
                     "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textboxSagstitel.Text + "%'"
                     ,
                     constring);
@@ -39,8 +45,5 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
             searchForm.dataGridView1.DataSource = datatable1;
             searchForm.Refresh();
         }
-
-        //udfyld combobox med Emnetyper fra DB
-   
     }
 }

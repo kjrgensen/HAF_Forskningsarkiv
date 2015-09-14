@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBoxFrisøgning = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +43,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textboxSagstitel = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.textBoxSagoprettet = new System.Windows.Forms.TextBox();
+            this.textBoxsagAfsluttet = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -102,7 +108,7 @@
             // 
             // buttonSøg
             // 
-            this.buttonSøg.Location = new System.Drawing.Point(12, 345);
+            this.buttonSøg.Location = new System.Drawing.Point(12, 390);
             this.buttonSøg.Name = "buttonSøg";
             this.buttonSøg.Size = new System.Drawing.Size(264, 31);
             this.buttonSøg.TabIndex = 12;
@@ -168,7 +174,7 @@
             this.panel1.Controls.Add(this.MatriealetypeBox);
             this.panel1.Controls.Add(this.comboEmnetyper);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(12, 170);
+            this.panel1.Location = new System.Drawing.Point(12, 219);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(234, 155);
             this.panel1.TabIndex = 19;
@@ -189,6 +195,38 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "Sagstitel:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 103);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Sag oprettet:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(132, 103);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Sag afsluttet:";
+            // 
+            // textBoxSagoprettet
+            // 
+            this.textBoxSagoprettet.Location = new System.Drawing.Point(17, 126);
+            this.textBoxSagoprettet.Name = "textBoxSagoprettet";
+            this.textBoxSagoprettet.Size = new System.Drawing.Size(64, 20);
+            this.textBoxSagoprettet.TabIndex = 30;
+            // 
+            // textBoxsagAfsluttet
+            // 
+            this.textBoxsagAfsluttet.Location = new System.Drawing.Point(135, 126);
+            this.textBoxsagAfsluttet.Name = "textBoxsagAfsluttet";
+            this.textBoxsagAfsluttet.Size = new System.Drawing.Size(64, 20);
+            this.textBoxsagAfsluttet.TabIndex = 31;
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +234,10 @@
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1317, 551);
+            this.Controls.Add(this.textBoxsagAfsluttet);
+            this.Controls.Add(this.textBoxSagoprettet);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textboxSagstitel);
             this.Controls.Add(this.panel1);
@@ -233,5 +275,10 @@
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.TextBox textboxSagstitel;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.TextBox textBoxSagoprettet;
+        public System.Windows.Forms.TextBox textBoxsagAfsluttet;
     }
 }

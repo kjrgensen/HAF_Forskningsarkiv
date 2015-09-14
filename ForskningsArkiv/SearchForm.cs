@@ -35,47 +35,64 @@ namespace ForskningsArkiv
 
         private void button2Emnetyper_Click(object sender, EventArgs e)
         {
-            //if (textBox2Emnetyper.Text.Length>0)
-            //{
-            //var emnetypeSøgDB = new EmnetypeSøgDB();
-            //emnetypeSøgDB.SøgSpecifiktEmnetyperFriTeskt(this);
-
-
-            //    var materialetypeSøg = new MaterialetypeSøg();  
-            //materialetypeSøg.SøgSpecifiktMaterialetypeFriTeskt(this);
 
             var sagstitelSøgdb = new SagstitelSøgDB();
+            var MeterialetypeSøg = new MaterialetypeSøg();
+            var PeriodetypeSøg = new PeriodetyperSøgDB();
+            var Emnetypesøg = new EmnetypeSøgDB();
+            var årstalOprettetafsluttet = new ÅrstalOpretAfslutSagSøgDB();
 
 
-
-             if (comboEmnetyper.SelectedItem == null & PeriodeTPComboBox.SelectedItem == null)
-            {
-
-                var mt = new MaterialetypeSøg();
-                mt.SøgSpecifiktMaterialetypeFriTeskt(this);
-            }
-
-           else if (textBoxFrisøgning.Text.Length == 0)
-            {
-                textBoxFrisøgning.Clear();
-
-                sagstitelSøgdb.søgComboBox(this);
-           
-
-            }
-
-         
-            else
+            if (comboEmnetyper.SelectedItem == null & PeriodeTPComboBox.SelectedItem == null & MatriealetypeBox.SelectedItem == null)
             {
 
                 sagstitelSøgdb.SagstitelSøgFritekst(this);
+
             }
 
-      
+            else if (comboEmnetyper.SelectedItem == null & PeriodeTPComboBox.SelectedItem == null)
+            {
+
+                MeterialetypeSøg.SøgSpecifiktMaterialetypeFriTeskt(this);
+
+            }
+
+            else if (MatriealetypeBox.SelectedItem == null & PeriodeTPComboBox.SelectedItem == null)
+            {
+
+                Emnetypesøg.SøgSpecifiktEmnetyperFriTeskt(this);
+            }
+
+            else if (MatriealetypeBox.SelectedItem == null & comboEmnetyper.SelectedItem == null)
+            {
+
+                PeriodetypeSøg.SøgFritekstPeriode(this);
+            }
+
+            else if (MatriealetypeBox.SelectedItem == null & comboEmnetyper.SelectedItem == null & PeriodeTPComboBox.SelectedItem == null)
+            {
+
+                årstalOprettetafsluttet.SøgÅrstaloprettetFrit(this);
+            }
+
+
+            else if (comboEmnetyper.SelectedItem == null & PeriodeTPComboBox.SelectedItem == null & MatriealetypeBox.SelectedItem == null & textBoxFrisøgning.Text == null)
+            {
+
+
+                årstalOprettetafsluttet.SøgÅrstalAfsluttet(this);
+            }
+
+            else if (textBoxFrisøgning.Text.Length == 0)
+            {
+
+                sagstitelSøgdb.søgComboBox(this);
+
+
+            }
 
 
 
-            //sagstitelSøgdb.søgComboBox(this);
         }
 
         private void SearchForm_Load(object sender, EventArgs e)
@@ -84,10 +101,9 @@ namespace ForskningsArkiv
             filComboboxFraDb.FillMaterielTypeComboBox(this);
 
 
-            var emnetypeSøgDBe = new EmnetypeSøgDB();
-            emnetypeSøgDBe.FillEmnetypeComboBox(this);
+            var filComboboxEmnetype = new FillComboBoxFromDB();
+            filComboboxEmnetype.FillEmnetypeComboBox(this);
 
-            
             var fillcomboperiode = new FillComboBoxFromDB();
             fillcomboperiode.FillPeriodeCombobox(this);
         }
@@ -109,5 +125,7 @@ namespace ForskningsArkiv
             var sagstitelSøgdb = new SagstitelSøgDB();
             sagstitelSøgdb.SagstitelSøgFritekst(this);
         }
+
+       
     }
 }

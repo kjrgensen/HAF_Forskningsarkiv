@@ -48,7 +48,7 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             searchForm.dataGridView1.DataSource = datatable;
 
-         
+
 
             constring.Close();
 

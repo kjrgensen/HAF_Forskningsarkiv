@@ -20,7 +20,7 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
                 new SqlDataAdapter(
                     "Select tblMaterialetyper.materialetype, tblMaterialetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblMaterialetyper" +
                     " where materialetype='" + searchForm.MatriealetypeBox.SelectedItem +
-                    "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBoxFrisøgning.Text + "%'"
+                    "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textboxSagstitel.Text + "%'"
                     ,
                     constring);
 
