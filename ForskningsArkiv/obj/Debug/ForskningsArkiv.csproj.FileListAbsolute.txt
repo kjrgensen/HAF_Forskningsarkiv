@@ -24,7 +24,6 @@ C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\Forskn
 C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
 C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe
 C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.pdb
-C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.Form1.resources
 C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.Properties.Resources.resources
 C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.SearchForm.resources
 C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csproj.GenerateResource.Cache
@@ -38,3 +37,5 @@ C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArk
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csproj.GenerateResource.Cache
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
+C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.VælgBrugerAdmin.resources
+C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.LoginForm.resources

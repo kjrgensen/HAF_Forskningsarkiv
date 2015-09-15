@@ -105,28 +105,28 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
 
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
-                    "Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblSagsoplysninger.dato_oprettet, tblSagsoplysninger.dato_afsluttet ,tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper" +
-                    " 'where dato_oprettet" + searchForm.textBoxSagoprettet.Text + "%'" + "' and dato.afsluttet "+ searchForm.textBoxsagAfsluttet.Text + "%'" + 
-                    "' and tblSagsoplysninger.sagens_titel like" + searchForm.textboxSagstitel.Text + "%'"
+                    "Select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblSagsoplysninger.dato_oprettet, tblSagsoplysninger.dato_afsluttet from tblSagsoplysninger" +
+                    "where tblSagsoplysninger.dato_oprettet like'" + searchForm.textBoxSagoprettet.Text + "%'"
                     ,
                     constring);
 
             var datatable1 = new DataTable();
             sqlDataAdapter1.Fill(datatable1);
 
-            //if (datatable1.Rows.Count == 0)
-            //{
-            //    MessageBox.Show("Ingen rapporter fundet");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("fundet =" + datatable1.Rows.Count);
-            //}
+            if (datatable1.Rows.Count == 0)
+            {
+                MessageBox.Show("Ingen rapporter fundet");
+            }
+            else
+            {
+                MessageBox.Show("fundet =" + datatable1.Rows.Count);
+            }
 
 
             searchForm.dataGridView1.DataSource = datatable1;
             searchForm.Refresh();
-
+            
+            //Select* from tblSagsoplysninger where tblSagsoplysninger.dato_oprettet like '%1996%'
 
         }
     }
