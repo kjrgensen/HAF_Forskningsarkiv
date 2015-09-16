@@ -33,6 +33,7 @@ namespace ForskningsArkiv
 
         private void button2Emnetyper_Click(object sender, EventArgs e)
         {
+            //BIGFAT CHANGE
             //if (textBox2Emnetyper.Text.Length>0)
             //{
             var emnetypeSøgDB = new EmnetypeSøgDB();
