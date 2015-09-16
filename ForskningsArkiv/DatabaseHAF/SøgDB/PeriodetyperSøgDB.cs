@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using ForskningsArkiv.ConnectionDB;
 
 namespace ForskningsArkiv.DatabaseHAF.SøgDB
@@ -23,9 +24,9 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
 
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
-                    "Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype, tblPeriodetyper.periodetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper, tblPeriodetyper" +
+                    "Select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblPeriodetyper.periodetype ,tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper, tblPeriodetyper" +
                     " where periodetype='" + searchForm.PeriodeTPComboBox.SelectedItem +
-                    "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textboxSagstitel.Text + "%'"
+                    "' and tblSagsoplysninger.sagens_titel like'%" + searchForm.textboxSagstitel.Text + "%'"
                     ,
                     constring);
 
@@ -43,7 +44,9 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
 
 
             searchForm.dataGridView1.DataSource = datatable1;
-            searchForm.Refresh();
+            //searchForm.Refresh();
+            constring.Close();
+          
         }
     }
 }

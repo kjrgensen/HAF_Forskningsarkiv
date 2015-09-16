@@ -27,7 +27,7 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
                     "Select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblSagsoplysninger.dato_oprettet, tblSagsoplysninger.dato_afsluttet from tblSagsoplysninger" +
-                    " where dato_oprettet='" + searchForm.textBoxSagoprettet.Text +"'"
+                    " where dato_oprettet='%" + searchForm.textBoxSagoprettet.Text +"'"
               
                     ,
                     constring);
@@ -46,6 +46,8 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
 
 
             searchForm.dataGridView1.DataSource = datatable1;
+
+            constring.Close();
             searchForm.Refresh();
 
 
@@ -84,6 +86,8 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
 
 
             searchForm.dataGridView1.DataSource = datatable1;
+
+            constring.Close();
             searchForm.Refresh();
 
 
@@ -133,8 +137,9 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
           searchForm.dataGridView1.DataSource = DatoOprettetList;
 
 
-            searchForm.Refresh();
 
+            constring.Close();
+            searchForm.Refresh();
 
             //Select* from tblSagsoplysninger where tblSagsoplysninger.dato_oprettet like '%1996%'
 

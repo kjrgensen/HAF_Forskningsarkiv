@@ -41,6 +41,8 @@
             this.PeriodeLB = new System.Windows.Forms.Label();
             this.PeriodeTPComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.EksperimenttyperComboBox = new System.Windows.Forms.ComboBox();
             this.textboxSagstitel = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,8 +50,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBoxSagoprettet = new System.Windows.Forms.TextBox();
             this.textBoxsagAfsluttet = new System.Windows.Forms.TextBox();
-            this.EksperimenttyperComboBox = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxKontaktperson = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -110,9 +112,9 @@
             // 
             // buttonSøg
             // 
-            this.buttonSøg.Location = new System.Drawing.Point(12, 434);
+            this.buttonSøg.Location = new System.Drawing.Point(12, 439);
             this.buttonSøg.Name = "buttonSøg";
-            this.buttonSøg.Size = new System.Drawing.Size(264, 31);
+            this.buttonSøg.Size = new System.Drawing.Size(234, 40);
             this.buttonSøg.TabIndex = 12;
             this.buttonSøg.Text = "Søg";
             this.buttonSøg.UseVisualStyleBackColor = true;
@@ -183,8 +185,28 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 219);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(234, 198);
+            this.panel1.Size = new System.Drawing.Size(234, 199);
             this.panel1.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 133);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Eksperimentyper:";
+            // 
+            // EksperimenttyperComboBox
+            // 
+            this.EksperimenttyperComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EksperimenttyperComboBox.FormattingEnabled = true;
+            this.EksperimenttyperComboBox.Location = new System.Drawing.Point(1, 149);
+            this.EksperimenttyperComboBox.MaxDropDownItems = 50;
+            this.EksperimenttyperComboBox.Name = "EksperimenttyperComboBox";
+            this.EksperimenttyperComboBox.Size = new System.Drawing.Size(139, 21);
+            this.EksperimenttyperComboBox.TabIndex = 19;
+            this.EksperimenttyperComboBox.SelectedIndexChanged += new System.EventHandler(this.EksperimenttyperComboBox_SelectedIndexChanged);
             // 
             // textboxSagstitel
             // 
@@ -205,7 +227,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 103);
+            this.label5.Location = new System.Drawing.Point(12, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 23;
@@ -214,7 +236,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(132, 103);
+            this.label6.Location = new System.Drawing.Point(111, 168);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 24;
@@ -222,7 +244,7 @@
             // 
             // textBoxSagoprettet
             // 
-            this.textBoxSagoprettet.Location = new System.Drawing.Point(17, 126);
+            this.textBoxSagoprettet.Location = new System.Drawing.Point(12, 184);
             this.textBoxSagoprettet.Name = "textBoxSagoprettet";
             this.textBoxSagoprettet.Size = new System.Drawing.Size(64, 20);
             this.textBoxSagoprettet.TabIndex = 30;
@@ -230,30 +252,26 @@
             // 
             // textBoxsagAfsluttet
             // 
-            this.textBoxsagAfsluttet.Location = new System.Drawing.Point(135, 126);
+            this.textBoxsagAfsluttet.Location = new System.Drawing.Point(114, 184);
             this.textBoxsagAfsluttet.Name = "textBoxsagAfsluttet";
             this.textBoxsagAfsluttet.Size = new System.Drawing.Size(64, 20);
             this.textBoxsagAfsluttet.TabIndex = 31;
             // 
-            // EksperimenttyperComboBox
+            // label8
             // 
-            this.EksperimenttyperComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EksperimenttyperComboBox.FormattingEnabled = true;
-            this.EksperimenttyperComboBox.Location = new System.Drawing.Point(1, 149);
-            this.EksperimenttyperComboBox.MaxDropDownItems = 50;
-            this.EksperimenttyperComboBox.Name = "EksperimenttyperComboBox";
-            this.EksperimenttyperComboBox.Size = new System.Drawing.Size(139, 21);
-            this.EksperimenttyperComboBox.TabIndex = 19;
-            this.EksperimenttyperComboBox.SelectedIndexChanged += new System.EventHandler(this.EksperimenttyperComboBox_SelectedIndexChanged);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 99);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 13);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "Kontaktperson:";
             // 
-            // label7
+            // textBoxKontaktperson
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 133);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 13);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Eksperimentyper:";
+            this.textBoxKontaktperson.Location = new System.Drawing.Point(12, 115);
+            this.textBoxKontaktperson.Name = "textBoxKontaktperson";
+            this.textBoxKontaktperson.Size = new System.Drawing.Size(166, 20);
+            this.textBoxKontaktperson.TabIndex = 33;
             // 
             // SearchForm
             // 
@@ -262,6 +280,8 @@
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1317, 551);
+            this.Controls.Add(this.textBoxKontaktperson);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxsagAfsluttet);
             this.Controls.Add(this.textBoxSagoprettet);
             this.Controls.Add(this.label6);
@@ -310,5 +330,7 @@
         public System.Windows.Forms.TextBox textBoxsagAfsluttet;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.ComboBox EksperimenttyperComboBox;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox textBoxKontaktperson;
     }
 }

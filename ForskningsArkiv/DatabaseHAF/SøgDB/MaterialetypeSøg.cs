@@ -20,23 +20,25 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
                 new SqlDataAdapter(
                     "Select tblMaterialetyper.materialetype, tblMaterialetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblMaterialetyper" +
                     " where materialetype='" + searchForm.MatriealetypeBox.SelectedItem +
-                    "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textboxSagstitel.Text + "%'"
+                    "' and tblSagsoplysninger.sagens_titel like'%" + searchForm.textboxSagstitel.Text + "%'"
                     ,
                     constring);
 
             var datatable1 = new DataTable();
             sqlDataAdapter1.Fill(datatable1);
 
-            if (datatable1.Rows.Count == 0)
-            {
-                MessageBox.Show("Ingen rapporter fundet");
-            }
-            else
-            {
-                MessageBox.Show("fundet =" + datatable1.Rows.Count);
-            }
+            //if (datatable1.Rows.Count == 0)
+            //{
+            //    MessageBox.Show("Ingen rapporter fundet");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("fundet =" + datatable1.Rows.Count);
+            //}
 
             searchForm.dataGridView1.DataSource = datatable1;
+
+            constring.Close();
             searchForm.Refresh();
         }
 

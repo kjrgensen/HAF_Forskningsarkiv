@@ -39,9 +39,6 @@ namespace ForskningsArkiv
             var Emnetypesøg = new EmnetypeSøgDB();
             var årstalOprettetafsluttet = new ÅrstalOpretAfslutSagSøgDB();
 
-
-         
-
             sagstitelSøgdb.SagstitelSøgFritekst(this);
 
          

@@ -17,29 +17,32 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
-                    "Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper" +
+                    "Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype, tblPeriodetyper.periodetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper, tblPeriodetyper" +
                     " where emnetype='" + searchForm.comboEmnetyper.SelectedItem +                
-                    "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textboxSagstitel.Text + "%'"
+                    "' and tblSagsoplysninger.sagens_titel like'%" + searchForm.textboxSagstitel.Text + "%'"
                     ,
                     constring);
 
             var datatable1 = new DataTable();
             sqlDataAdapter1.Fill(datatable1);
 
-            if (datatable1.Rows.Count == 0)
-            {
-                MessageBox.Show("Ingen rapporter fundet");
-            }
-            else
-            {
-                MessageBox.Show("fundet =" + datatable1.Rows.Count);
-            }
+            //if (datatable1.Rows.Count == 0)
+            //{
+            //    MessageBox.Show("Ingen rapporter fundet");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("fundet =" + datatable1.Rows.Count);
+            //}
 
 
             searchForm.dataGridView1.DataSource = datatable1;
+           
+            constring.Close();
             searchForm.Refresh();
         }
 
+       
         //udfyld combobox med Emnetyper fra DB
    
     }

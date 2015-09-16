@@ -16,42 +16,45 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
             constring.Open();
 
             //clear combo hvis man ønsker søge fritekst
-            searchForm.comboEmnetyper.ResetText();
-            searchForm.PeriodeTPComboBox.ResetText();
-            searchForm.MatriealetypeBox.ResetText();
-
-            //var søgfri =
-            //    " Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper " +
-            //    "where sagens_titel like'" + searchForm.textBoxFrisøgning.Text + "%'";
-
-            //var SøgFriCmd = new SqlCommand(søgfri, constring);
-            //sqlDataAdapter1.SelectCommand = SøgFriCmd;
-
-
+            //searchForm.comboEmnetyper.ResetText();
+            //searchForm.PeriodeTPComboBox.ResetText();
+            //searchForm.MatriealetypeBox.ResetText();
 
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
-                    "Select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblSagsoplysninger.dato_oprettet, tblSagsoplysninger.dato_afsluttet, tblSagsoplysninger.sags_placering from tblSagsoplysninger " +
-                    "where sagens_titel like'" + searchForm.textBoxFrisøgning.Text + "%'", constring);
-         
+                    "Select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblSagsoplysninger.dato_oprettet, tblSagsoplysninger.dato_afsluttet, tblSagsoplysninger.sags_placering, tblEksperimenttyper.eksperimenttype from tblSagsoplysninger, tblEksperimenttyper " +
+                    "where sagens_titel like'%" + searchForm.textBoxFrisøgning.Text + "%'", constring);     
 
             var datatable = new DataTable();
        
             sqlDataAdapter1.Fill(datatable);
 
-            if (datatable.Rows.Count == 0)
-            {
-                MessageBox.Show("Ingen rapporter fundet");
-            }
-            else
-            {
-                MessageBox.Show("fundet =" + datatable.Rows.Count);
-            }
+            //if (datatable.Rows.Count == 0)
+            //{
+            //    MessageBox.Show("Ingen rapporter fundet");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("fundet =" + datatable.Rows.Count);
+            //}
 
             searchForm.dataGridView1.DataSource = datatable;
 
+            int rows = searchForm.dataGridView1.RowCount;
+
+            if (searchForm.dataGridView1.RowCount== 0)
+            {
+                MessageBox.Show("ingen rapporter fundet!");
+            }
+            else
+            {
+                MessageBox.Show("Fundet: " + rows);
+            } 
+
+   
 
             constring.Close();
+            searchForm.dataGridView1.Refresh();
         }
 
         public void søgComboBox(SearchForm searchForm)
