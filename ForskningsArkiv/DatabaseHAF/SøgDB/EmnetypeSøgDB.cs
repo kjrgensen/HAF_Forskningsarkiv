@@ -17,9 +17,9 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
-                    "Select tblEmnetyper.emnetype, tblEmnetyper.emneID, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblEmnetyper" +
-                    " where emnetype='" + searchForm.comboBox1.SelectedItem +
-                    "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textBox2Emnetyper.Text + "%'"
+                    "Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper" +
+                    " where emnetype='" + searchForm.comboEmnetyper.SelectedItem +                
+                    "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textboxSagstitel.Text + "%'"
                     ,
                     constring);
 
@@ -35,29 +35,12 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
                 MessageBox.Show("fundet =" + datatable1.Rows.Count);
             }
 
+
             searchForm.dataGridView1.DataSource = datatable1;
             searchForm.Refresh();
         }
 
         //udfyld combobox med Emnetyper fra DB
-        public void FillEmnetypeComboBox(SearchForm searchForm)
-        {
-            _db = new DBConnectionstring();
-            var constring = new SqlConnection(_db.DbConnectionString);
-
-            constring.Open();
-
-            var SqlDataAdapterEm = new SqlDataAdapter("select * from tblEmnetyper order by emnetype", constring);
-
-            var datatableCmEm = new DataTable();
-
-            SqlDataAdapterEm.Fill(datatableCmEm);
-
-            for (var i = 0; i < datatableCmEm.Rows.Count; i++)
-            {
-                searchForm.comboBox1.Items.Add(datatableCmEm.Rows[i]["emnetype"]);
-            }
-            constring.Close();
-        }
+   
     }
 }
