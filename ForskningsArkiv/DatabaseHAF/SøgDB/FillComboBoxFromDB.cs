@@ -69,8 +69,6 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
             constring.Close();
         }
 
-
-
         public void Eksperimenttyper(SearchForm searchForm)
         {
             _db = new DBConnectionstring();
@@ -78,7 +76,8 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
 
             constring.Open();
 
-            var SqlDataAdapterEm = new SqlDataAdapter("select * from tblEksperimenttyper order by eksperimenttype", constring);
+            var SqlDataAdapterEm = new SqlDataAdapter("select * from tblEksperimenttyper order by eksperimenttype",
+                constring);
 
             var datatableCmEm = new DataTable();
 
@@ -89,9 +88,6 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
                 searchForm.EksperimenttyperComboBox.Items.Add(datatableCmEm.Rows[i]["eksperimenttype"]);
             }
             constring.Close();
-
-
-
         }
     }
 }

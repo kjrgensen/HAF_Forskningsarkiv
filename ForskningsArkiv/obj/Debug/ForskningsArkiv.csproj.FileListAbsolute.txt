@@ -39,4 +39,3 @@ C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArk
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csproj.GenerateResource.Cache
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
-C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csprojResolveAssemblyReference.cache

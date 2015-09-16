@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using ForskningsArkiv.ConnectionDB;
 
 namespace ForskningsArkiv.DatabaseHAF.SøgDB
 {
-   public class EksperimenttyperSøgDB
+    public class EksperimenttyperSøgDB
     {
         public DBConnectionstring _db;
 
-       public void EksperimentTyperSøgDbFRi(SearchForm searchForm)
-       {
+        public void EksperimentTyperSøgDbFRi(SearchForm searchForm)
+        {
             _db = new DBConnectionstring();
             var constring = new SqlConnection(_db.DbConnectionString);
 
@@ -46,8 +40,6 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
 
             constring.Close();
             searchForm.Refresh();
-
         }
-
     }
 }

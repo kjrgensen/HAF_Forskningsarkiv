@@ -1,6 +1,5 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 using ForskningsArkiv.ConnectionDB;
 
 namespace ForskningsArkiv.DatabaseHAF.SøgDB
@@ -41,6 +40,5 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
             constring.Close();
             searchForm.Refresh();
         }
-
     }
 }

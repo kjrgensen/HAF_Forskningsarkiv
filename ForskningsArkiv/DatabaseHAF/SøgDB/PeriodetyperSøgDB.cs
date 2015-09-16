@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using ForskningsArkiv.ConnectionDB;
 
 namespace ForskningsArkiv.DatabaseHAF.SøgDB
 {
-   public class PeriodetyperSøgDB
+    public class PeriodetyperSøgDB
     {
+        public DBConnectionstring _db;
 
-       public DBConnectionstring _db;
         public void SøgFritekstPeriode(SearchForm searchForm)
-       {
-
+        {
             _db = new DBConnectionstring();
             var constring = new SqlConnection(_db.DbConnectionString);
 
@@ -46,7 +39,6 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
             searchForm.dataGridView1.DataSource = datatable1;
             //searchForm.Refresh();
             constring.Close();
-          
         }
     }
 }

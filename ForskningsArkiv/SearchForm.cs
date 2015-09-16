@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 using ForskningsArkiv.ConnectionDB;
 using ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB;
@@ -39,9 +40,20 @@ namespace ForskningsArkiv
             var Emnetypesøg = new EmnetypeSøgDB();
             var årstalOprettetafsluttet = new ÅrstalOpretAfslutSagSøgDB();
 
-            sagstitelSøgdb.SagstitelSøgFritekst(this);
+            var KontaktpersonsøgFri = new KontaktpersonSøgDB();
 
-         
+            //Thread t1 = new Thread(() => sagstitelSøgdb.SagstitelSøgFritekst(this));
+       
+            if (textBoxKontaktperson.Text.Length == 0 )
+            {
+                sagstitelSøgdb.SagstitelSøgFritekst(this);
+            }
+            else
+            {
+                
+                KontaktpersonsøgFri.KontaktpersonSøg(this);
+            }
+
 
             //else if (comboEmnetyper.SelectedItem == null & PeriodeTPComboBox.SelectedItem == null)
             //{

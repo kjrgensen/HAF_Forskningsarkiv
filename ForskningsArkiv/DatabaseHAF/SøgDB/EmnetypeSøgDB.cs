@@ -1,6 +1,5 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 {
@@ -18,7 +17,7 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
                     "Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype, tblPeriodetyper.periodetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper, tblPeriodetyper" +
-                    " where emnetype='" + searchForm.comboEmnetyper.SelectedItem +                
+                    " where emnetype='" + searchForm.comboEmnetyper.SelectedItem +
                     "' and tblSagsoplysninger.sagens_titel like'%" + searchForm.textboxSagstitel.Text + "%'"
                     ,
                     constring);
@@ -37,13 +36,9 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
 
             searchForm.dataGridView1.DataSource = datatable1;
-           
+
             constring.Close();
             searchForm.Refresh();
         }
-
-       
-        //udfyld combobox med Emnetyper fra DB
-   
     }
 }
