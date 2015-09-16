@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ForskningsArkiv.ConnectionDB;
 using ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB;
@@ -35,7 +33,6 @@ namespace ForskningsArkiv
 
         private void button2Emnetyper_Click(object sender, EventArgs e)
         {
-
             var sagstitelSøgdb = new SagstitelSøgDB();
             var MeterialetypeSøg = new MaterialetypeSøg();
             var PeriodetypeSøg = new PeriodetyperSøgDB();
@@ -43,12 +40,11 @@ namespace ForskningsArkiv
             var årstalOprettetafsluttet = new ÅrstalOpretAfslutSagSøgDB();
 
 
-            //if (comboEmnetyper.SelectedItem == null & PeriodeTPComboBox.SelectedItem == null & MatriealetypeBox.SelectedItem == null)
-            //{
+         
 
-            //    sagstitelSøgdb.SagstitelSøgFritekst(this);
+            sagstitelSøgdb.SagstitelSøgFritekst(this);
 
-            //}
+         
 
             //else if (comboEmnetyper.SelectedItem == null & PeriodeTPComboBox.SelectedItem == null)
             //{
@@ -92,22 +88,22 @@ namespace ForskningsArkiv
             //}
 
 
-  
-            //årstalOprettetafsluttet.ÅrstalSøgBetween(this);
-            årstalOprettetafsluttet.SøgÅrstaloprettetFrit(this);
+            //årstalOprettetafsluttet.SøgÅrstaloprettetFrit(this);
         }
 
         private void SearchForm_Load(object sender, EventArgs e)
         {
-            var filComboboxFraDb =  new FillComboBoxFromDB();
+            var filComboboxFraDb = new FillComboBoxFromDB();
             filComboboxFraDb.FillMaterielTypeComboBox(this);
 
 
-            var filComboboxEmnetype = new FillComboBoxFromDB();
-            filComboboxEmnetype.FillEmnetypeComboBox(this);
+            filComboboxFraDb.FillEmnetypeComboBox(this);
 
-            var fillcomboperiode = new FillComboBoxFromDB();
-            fillcomboperiode.FillPeriodeCombobox(this);
+         
+            filComboboxFraDb.FillPeriodeCombobox(this);
+
+
+            filComboboxFraDb.Eksperimenttyper(this);
         }
 
         private void søgMaterialetyper_Click(object sender, EventArgs e)
@@ -143,13 +139,18 @@ namespace ForskningsArkiv
 
         private void MatriealetypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var MeterialetypeSøg = new MaterialetypeSøg();  
+            var MeterialetypeSøg = new MaterialetypeSøg();
             MeterialetypeSøg.SøgSpecifiktMaterialetypeFriTeskt(this);
         }
 
         private void textBoxSagoprettet_TextChanged(object sender, EventArgs e)
         {
-        
+        }
+
+        private void EksperimenttyperComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var ekspermenttypesøgfri = new EksperimenttyperSøgDB();
+            ekspermenttypesøgfri.EksperimentTyperSøgDbFRi(this);
         }
     }
 }

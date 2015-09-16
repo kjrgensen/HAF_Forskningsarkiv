@@ -103,29 +103,39 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
             //searchForm.dateTimePickerAfslut.Format = DateTimePickerFormat.Custom;
             //searchForm.dateTimePickerAfslut.CustomFormat = "dd-MM-yyyy";
 
-            var sqlDataAdapter1 =
-                new SqlDataAdapter(
-                    "Select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblSagsoplysninger.dato_oprettet, tblSagsoplysninger.dato_afsluttet from tblSagsoplysninger" +
-                    "where tblSagsoplysninger.dato_oprettet like'" + searchForm.textBoxSagoprettet.Text + "%'"
-                    ,
-                    constring);
+            List<string> DatoOprettetList = new List<string>();
 
-            var datatable1 = new DataTable();
-            sqlDataAdapter1.Fill(datatable1);
+            //var sqlDataAdapter1 =
+            //    new SqlDataAdapter(
+            //         "Select tblSagsoplysninger.dato_oprettet from tblSagsoplysninger"
+            //        ,
+            //        constring);
 
-            if (datatable1.Rows.Count == 0)
+            //var datatable1 = new DataTable();
+            //sqlDataAdapter1.Fill(datatable1);
+
+            //searchForm.dataGridView1.DataSource = datatable1;
+
+
+            string query = "Select tblSagsoplysninger.dato_oprettet from tblSagsoplysninger";
+
+            SqlCommand sqlcmd = new SqlCommand(query, constring);
+
+            SqlDataReader reader = sqlcmd.ExecuteReader();
+
+            while (reader.Read())
             {
-                MessageBox.Show("Ingen rapporter fundet");
-            }
-            else
-            {
-                MessageBox.Show("fundet =" + datatable1.Rows.Count);
+                DatoOprettetList.Add(reader.GetString(0));
+                
             }
 
 
-            searchForm.dataGridView1.DataSource = datatable1;
+          searchForm.dataGridView1.DataSource = DatoOprettetList;
+
+
             searchForm.Refresh();
-            
+
+
             //Select* from tblSagsoplysninger where tblSagsoplysninger.dato_oprettet like '%1996%'
 
         }

@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseHAF\DBConnectionstring.cs" />
+    <Compile Include="DatabaseHAF\SøgDB\EksperimenttyperSøgDB.cs" />
     <Compile Include="DatabaseHAF\SøgDB\EmnetypeSøgDB.cs" />
     <Compile Include="DatabaseHAF\SøgDB\FillComboBoxFromDB.cs" />
     <Compile Include="DatabaseHAF\SøgDB\MaterialetypeSøg.cs" />
