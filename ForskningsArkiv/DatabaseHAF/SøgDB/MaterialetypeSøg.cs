@@ -1,14 +1,15 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using ForskningsArkiv.ConnectionDB;
 
-namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
+namespace ForskningsArkiv.DatabaseHAF.SøgDB
 {
-    public class EmnetypeSøgDB
+    public class MaterialetypeSøg
     {
         public DBConnectionstring _db;
 
-        public void SøgSpecifiktEmnetyperFriTeskt(SearchForm searchForm)
+        public void SøgSpecifiktMaterialetypeFriTeskt(SearchForm searchForm)
         {
             _db = new DBConnectionstring();
             var constring = new SqlConnection(_db.DbConnectionString);
@@ -17,8 +18,8 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
-                    "Select tblEmnetyper.emnetype, tblEmnetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblMaterialetyper.materialetype from tblSagsoplysninger, tblEmnetyper, tblMaterialetyper" +
-                    " where emnetype='" + searchForm.comboEmnetyper.SelectedItem +                
+                    "Select tblMaterialetyper.materialetype, tblMaterialetyper.beskrivelse, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr from tblSagsoplysninger, tblMaterialetyper" +
+                    " where materialetype='" + searchForm.MatriealetypeBox.SelectedItem +
                     "' and tblSagsoplysninger.sagens_titel like'" + searchForm.textboxSagstitel.Text + "%'"
                     ,
                     constring);
@@ -35,12 +36,9 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
                 MessageBox.Show("fundet =" + datatable1.Rows.Count);
             }
 
-
             searchForm.dataGridView1.DataSource = datatable1;
             searchForm.Refresh();
         }
 
-        //udfyld combobox med Emnetyper fra DB
-   
     }
 }
