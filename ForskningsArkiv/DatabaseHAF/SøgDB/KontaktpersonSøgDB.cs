@@ -31,14 +31,14 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
 
             var rows = searchForm.dataGridView1.RowCount;
 
-            if (searchForm.dataGridView1.RowCount == 0)
-            {
-                MessageBox.Show("ingen rapporter fundet!");
-            }
-            else
-            {
-                MessageBox.Show("Fundet: " + rows);
-            }
+            //if (searchForm.dataGridView1.RowCount == 0)
+            //{
+            //    MessageBox.Show("ingen rapporter fundet!");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Fundet: " + rows);
+            //}
 
             constring.Close();
 
