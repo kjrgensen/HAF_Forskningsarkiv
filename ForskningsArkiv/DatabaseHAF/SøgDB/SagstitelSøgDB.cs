@@ -22,7 +22,7 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
-                    "Select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblSagsoplysninger.dato_oprettet, tblSagsoplysninger.dato_afsluttet, tblSagsoplysninger.sags_placering, tblEksperimenttyper.eksperimenttype from tblSagsoplysninger, tblEksperimenttyper " +
+                    "Select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblSagsoplysninger.dato_oprettet, tblSagsoplysninger.dato_afsluttet, tblSagsoplysninger.sags_placering from tblSagsoplysninger " +
                     "where sagens_titel like'%" + searchForm.textBoxFrisøgning.Text + "%'", constring);
 
             var datatable = new DataTable();
@@ -33,14 +33,14 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             var rows = searchForm.dataGridView1.RowCount;
 
-            if (searchForm.dataGridView1.RowCount == 0)
-            {
-                MessageBox.Show("ingen rapporter fundet!");
-            }
-            else
-            {
-                MessageBox.Show("Fundet: " + rows);
-            }
+            //if (searchForm.dataGridView1.RowCount == 0)
+            //{
+            //    MessageBox.Show("ingen rapporter fundet!");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Fundet: " + rows);
+            //}
 
             constring.Close();
             searchForm.dataGridView1.Refresh();

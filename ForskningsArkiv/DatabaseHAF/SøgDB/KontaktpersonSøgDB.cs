@@ -20,7 +20,7 @@ namespace ForskningsArkiv.DatabaseHAF.SøgDB
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
                     "Select tblKontaktpersoner.fornavn,tblKontaktpersoner.efternavn, tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblSagsoplysninger.dato_oprettet, tblSagsoplysninger.dato_afsluttet, tblSagsoplysninger.sags_placering from tblSagsoplysninger, tblKontaktpersoner " +
-                    "where fornavn like'%" + searchForm.textBoxKontaktperson.Text + "%'", constring);
+                    "where efternavn like'%" + searchForm.textBoxKontaktperson.Text + "%'", constring);
 
             var datatable = new DataTable();
 
