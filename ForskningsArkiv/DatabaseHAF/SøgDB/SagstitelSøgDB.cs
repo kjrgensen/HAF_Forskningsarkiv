@@ -25,7 +25,8 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
                     "select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblKontaktpersoner.fornavn, tblKontaktpersoner.efternavn, tblEmnetyper.emnetype, tblMaterialetyper.materialetype, tblSagsoplysningerEmnetyperLink.sagsIDref from tblSagsoplysninger " +
                     "join tblKontaktpersoner on tblSagsoplysninger.kontaktpersonIDref=tblKontaktpersoner.kontaktpersonID " +
                     "join tblSagsoplysningerEmnetyperLink on tblSagsoplysninger.sagsID=tblSagsoplysningerEmnetyperLink.sagsIDref " +
-                    "join tblEmnetyper on tblSagsoplysningerEmnetyperLink.emneIDref=tblEmnetyper.emneID " +
+                    "join tblEmnetyper " +
+                    "on tblSagsoplysningerEmnetyperLink.emneIDref=tblEmnetyper.emneID " +
                     "join tblSagsoplysningerMaterialetyperLink "+
                     "on tblSagsoplysninger.sagsID=tblSagsoplysningerMaterialetyperLink.sagsIDref " +
                     "join tblMaterialetyper " +
