@@ -29,6 +29,7 @@ C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\Forskn
 C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csproj.GenerateResource.Cache
 C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.VælgBrugerAdmin.resources
 C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.LoginForm.resources
+C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csprojResolveAssemblyReference.cache
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe.config
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.exe
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\bin\Debug\ForskningsArkiv.pdb
@@ -39,5 +40,3 @@ C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArk
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csproj.GenerateResource.Cache
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.exe
 C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.pdb
-C:\Users\Herpr\Desktop\Datamatiker 5. Semester\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csprojResolveAssemblyReference.cache
-C:\Users\Herpr\Source\Repos\HAF_Forskningsarkiv\ForskningsArkiv\obj\Debug\ForskningsArkiv.csprojResolveAssemblyReference.cache

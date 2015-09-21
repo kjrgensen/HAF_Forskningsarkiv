@@ -22,8 +22,21 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
-                    "Select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblSagsoplysninger.dato_oprettet, tblSagsoplysninger.dato_afsluttet, tblSagsoplysninger.sags_placering from tblSagsoplysninger " +
-                    "where sagens_titel like'%" + searchForm.textBoxFrisøgning.Text + "%'", constring);
+                    "select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblKontaktpersoner.fornavn, tblKontaktpersoner.efternavn, tblEmnetyper.emnetype, tblMaterialetyper.materialetype, tblSagsoplysningerEmnetyperLink.sagsIDref from tblSagsoplysninger " +
+                    "join tblKontaktpersoner on tblSagsoplysninger.kontaktpersonIDref=tblKontaktpersoner.kontaktpersonID " +
+                    "join tblSagsoplysningerEmnetyperLink on tblSagsoplysninger.sagsID=tblSagsoplysningerEmnetyperLink.sagsIDref " +
+                    "join tblEmnetyper on tblSagsoplysningerEmnetyperLink.emneIDref=tblEmnetyper.emneID " +
+                    "join tblSagsoplysningerMaterialetyperLink "+
+                    "on tblSagsoplysninger.sagsID=tblSagsoplysningerMaterialetyperLink.sagsIDref " +
+                    "join tblMaterialetyper " +
+                    "on tblSagsoplysningerMaterialetyperLink.materialeIDref=tblMaterialetyper.materialeID " +
+                    "where sagens_titel " +
+                    "like'%"+ searchForm.textBoxFrisøgning.Text +"%'" +
+                    "or fornavn like'%"+ searchForm.textBoxFrisøgning.Text +"%'" +
+                    "or efternavn like'%"+ searchForm.textBoxFrisøgning.Text +"%'" +
+                    "or emnetype like'%"+ searchForm.textBoxFrisøgning.Text +"%'"+
+                    "or materialetype like'%"+ searchForm.textBoxFrisøgning.Text +"%'"
+                    , constring);
 
             var datatable = new DataTable();
 
@@ -33,14 +46,14 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             var rows = searchForm.dataGridView1.RowCount;
 
-            //if (searchForm.dataGridView1.RowCount == 0)
-            //{
-            //    MessageBox.Show("ingen rapporter fundet!");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Fundet: " + rows);
-            //}
+            if (searchForm.dataGridView1.RowCount == 0)
+            {
+                MessageBox.Show("ingen rapporter fundet!");
+            }
+            else
+            {
+                MessageBox.Show("Fundet: " + rows);
+            }
 
             constring.Close();
             searchForm.dataGridView1.Refresh();

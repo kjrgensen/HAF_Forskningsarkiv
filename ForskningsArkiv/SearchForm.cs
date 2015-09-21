@@ -44,15 +44,15 @@ namespace ForskningsArkiv
 
             //Thread t1 = new Thread(() => sagstitelSøgdb.SagstitelSøgFritekst(this));
        
-            if (textBoxKontaktperson.Text.Length == 0 )
-            {
+            //if (textBoxKontaktperson.Text.Length == 0 )
+            //{
                 sagstitelSøgdb.SagstitelSøgFritekst(this);
-            }
-            else
-            {
+            //}
+            //else
+            //{
                 
-                KontaktpersonsøgFri.KontaktpersonSøg(this);
-            }
+            //    KontaktpersonsøgFri.KontaktpersonSøg(this);
+            //}
 
 
             //else if (comboEmnetyper.SelectedItem == null & PeriodeTPComboBox.SelectedItem == null)
