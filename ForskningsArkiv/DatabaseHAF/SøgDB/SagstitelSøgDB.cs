@@ -22,21 +22,25 @@ namespace ForskningsArkiv.ConnectionDB.SpecifikationsSøgDB
 
             var sqlDataAdapter1 =
                 new SqlDataAdapter(
-                    "select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblKontaktpersoner.fornavn, tblKontaktpersoner.efternavn, tblEmnetyper.emnetype, tblMaterialetyper.materialetype, tblSagsoplysningerEmnetyperLink.sagsIDref from tblSagsoplysninger " +
+                    "select tblSagsoplysninger.sagens_titel, tblSagsoplysninger.journalNr, tblKontaktpersoner.fornavn, tblKontaktpersoner.efternavn, tblEmnetyper.emnetype, tblEksperimenttyper.eksperimenttype, tblMaterialetyper.materialetype, tblSagsoplysningerEmnetyperLink.sagsIDref from tblSagsoplysninger " +
                     "join tblKontaktpersoner on tblSagsoplysninger.kontaktpersonIDref=tblKontaktpersoner.kontaktpersonID " +
                     "join tblSagsoplysningerEmnetyperLink on tblSagsoplysninger.sagsID=tblSagsoplysningerEmnetyperLink.sagsIDref " +
                     "join tblEmnetyper " +
                     "on tblSagsoplysningerEmnetyperLink.emneIDref=tblEmnetyper.emneID " +
-                    "join tblSagsoplysningerMaterialetyperLink "+
+                    "join tblSagsoplysningerMaterialetyperLink " +
                     "on tblSagsoplysninger.sagsID=tblSagsoplysningerMaterialetyperLink.sagsIDref " +
                     "join tblMaterialetyper " +
-                    "on tblSagsoplysningerMaterialetyperLink.materialeIDref=tblMaterialetyper.materialeID " +
+                    "on tblSagsoplysningerMaterialetyperLink.materialeIDref=tblMaterialetyper.materialeID " +                  
+                    "join tblSagsoplysningerEksperimenttyperLink on tblSagsoplysninger.sagsID=tblSagsoplysningerEksperimenttyperLink.sagsIDref " +
+                    "join tblEksperimenttyper " +
+                    "on tblSagsoplysningerEksperimenttyperLink.eksperimentIDref=tblEksperimenttyper.eksperimentID " +
                     "where sagens_titel " +
-                    "like'%"+ searchForm.textBoxFrisøgning.Text +"%'" +
+                    "like '%" + searchForm.textBoxFrisøgning.Text +"%'" +
                     "or fornavn like'%"+ searchForm.textBoxFrisøgning.Text +"%'" +
                     "or efternavn like'%"+ searchForm.textBoxFrisøgning.Text +"%'" +
                     "or emnetype like'%"+ searchForm.textBoxFrisøgning.Text +"%'"+
-                    "or materialetype like'%"+ searchForm.textBoxFrisøgning.Text +"%'"
+                    "or materialetype like'%"+ searchForm.textBoxFrisøgning.Text +"%'"+
+                    "or eksperimenttype like'%"+ searchForm.textBoxFrisøgning.Text +"%'"
                     , constring);
 
             var datatable = new DataTable();
